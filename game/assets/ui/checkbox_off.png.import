@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cky7j8nvlydwr"
-path="res://.godot/imported/checkbox_off.png-b1c59de1834f6893515971d7da9e4357.ctex"
+uid="uid://dmvo3c5eu2i60"
+path="res://.godot/imported/checkbox_off.PNG-d9e1fa313f0ad22df5e293a8f47dccb5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/checkbox_off.png"
-dest_files=["res://.godot/imported/checkbox_off.png-b1c59de1834f6893515971d7da9e4357.ctex"]
+source_file="res://assets/ui/checkbox_off.PNG"
+dest_files=["res://.godot/imported/checkbox_off.PNG-d9e1fa313f0ad22df5e293a8f47dccb5.ctex"]
 
 [params]
 

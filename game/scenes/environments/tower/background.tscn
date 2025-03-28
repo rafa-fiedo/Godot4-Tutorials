@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgkatoifuyo8m"]
+
+[ext_resource type="Texture2D" uid="uid://beqixdowcieo0" path="res://assets/sprites/environment/tower/tower.png" id="1_tkrld"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkrld"]
+size = Vector2(5910, 886)
+
+[node name="Background" type="Node2D"]
+
+[node name="Tower" type="Sprite2D" parent="."]
+texture = ExtResource("1_tkrld")
+centered = false
+
+[node name="ResetArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ResetArea"]
+position = Vector2(902, 1856)
+shape = SubResource("RectangleShape2D_tkrld")

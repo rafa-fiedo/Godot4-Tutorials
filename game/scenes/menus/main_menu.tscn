@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://c23apbpii8nbk"]
 
-[ext_resource type="Script" path="res://scenes/menus/main_menu.gd" id="1_afffk"]
-[ext_resource type="PackedScene" uid="uid://bm2locmw78n65" path="res://scenes/menus/tutorial_button.tscn" id="2_476dn"]
-[ext_resource type="Texture2D" uid="uid://bhqkn60keuvuq" path="res://assets/thumbnails/01_test_thumbain.png" id="3_ajt6p"]
+[ext_resource type="Script" uid="uid://cxahmu2jadh5v" path="res://scenes/menus/main_menu.gd" id="1_afffk"]
+[ext_resource type="Texture2D" uid="uid://bi2fxongoh258" path="res://assets/ui/main_menu.png" id="2_6bivr"]
+[ext_resource type="PackedScene" uid="uid://bm2locmw78n65" path="res://scenes/menus/buttons/tutorial_button.tscn" id="2_476dn"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -13,14 +13,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_afffk")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0196078, 0.101961, 0.219608, 1)
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_6bivr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -35,37 +32,36 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.25
 
-[node name="Label" type="Label" parent="VBoxContainer/CenterTop"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 120
-text = "Tutorials by Rafa"
-horizontal_alignment = 1
-
 [node name="CenterBottom" type="CenterContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/CenterBottom"]
+[node name="FirstPage" type="GridContainer" parent="VBoxContainer/CenterBottom"]
 layout_mode = 2
 columns = 3
 
-[node name="Tutorial00" parent="VBoxContainer/CenterBottom/GridContainer" instance=ExtResource("2_476dn")]
+[node name="Tutorial01" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
 layout_mode = 2
 
-[node name="Tutorial01" parent="VBoxContainer/CenterBottom/GridContainer" instance=ExtResource("2_476dn")]
+[node name="Tutorial02" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
 visible = false
 layout_mode = 2
-tutorial_image = ExtResource("3_ajt6p")
 
-[node name="Tutorial02" parent="VBoxContainer/CenterBottom/GridContainer" instance=ExtResource("2_476dn")]
+[node name="Tutorial03" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
 visible = false
 layout_mode = 2
-tutorial_image = ExtResource("3_ajt6p")
 
-[node name="Tutorial03" parent="VBoxContainer/CenterBottom/GridContainer" instance=ExtResource("2_476dn")]
+[node name="Tutorial04" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
 visible = false
 layout_mode = 2
-tutorial_image = ExtResource("3_ajt6p")
+
+[node name="Tutorial05" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
+visible = false
+layout_mode = 2
+
+[node name="Tutorial06" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
+visible = false
+layout_mode = 2
 
 [node name="Version" type="Label" parent="."]
 layout_mode = 1
@@ -74,11 +70,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -130.0
-offset_top = -72.0
-offset_right = -28.0
+offset_left = -78.0
+offset_top = -45.0
+offset_right = -7.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_font_sizes/font_size = 52
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
 text = "v0.1"
 horizontal_alignment = 2
