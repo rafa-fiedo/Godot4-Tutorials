@@ -112,6 +112,9 @@ script = ExtResource("1_fb1dk")
 
 [node name="Background" parent="." instance=ExtResource("1_xxwxt")]
 
+[node name="Hairs" parent="." instance=ExtResource("8_c3kv8")]
+position = Vector2(752, 52)
+
 [node name="Player" parent="." instance=ExtResource("2_vm507")]
 position = Vector2(488, 439)
 floor_stop_on_slope = false
@@ -183,8 +186,5 @@ text = "Add Velocity"
 alignment = 1
 
 [node name="SceneButtons" parent="." instance=ExtResource("7_j1hit")]
-
-[node name="Hairs" parent="." instance=ExtResource("8_c3kv8")]
-position = Vector2(752, 52)
 
 [connection signal="toggled" from="checkboxes/CheckBox" to="." method="_on_check_box_toggled"]
