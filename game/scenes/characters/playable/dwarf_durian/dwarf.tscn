@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dyo0ra14pyp44" path="res://assets/sprites/characters/Spritesheet.png" id="2_ddeck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t61fv"]
-size = Vector2(95, 116.5)
+size = Vector2(64, 122.5)
 
 [sub_resource type="Animation" id="Animation_t61fv"]
 resource_name = "Idle"
@@ -74,7 +74,7 @@ hframes = 3
 vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-13.5, -59.75)
+position = Vector2(-10, -62.75)
 shape = SubResource("RectangleShape2D_t61fv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

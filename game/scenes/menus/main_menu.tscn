@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c23apbpii8nbk"]
+[gd_scene load_steps=5 format=3 uid="uid://c23apbpii8nbk"]
 
 [ext_resource type="Script" uid="uid://cxahmu2jadh5v" path="res://scenes/menus/main_menu.gd" id="1_afffk"]
 [ext_resource type="Texture2D" uid="uid://bi2fxongoh258" path="res://assets/ui/main_menu.png" id="2_6bivr"]
 [ext_resource type="PackedScene" uid="uid://bm2locmw78n65" path="res://scenes/menus/buttons/tutorial_button.tscn" id="2_476dn"]
+[ext_resource type="PackedScene" uid="uid://duv14gd0s3fo" path="res://scenes/menus/buttons/option_buttons.tscn" id="5_imvie"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -42,6 +43,7 @@ columns = 3
 
 [node name="Tutorial01" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
 layout_mode = 2
+title = "How to MOVE PLATFORMS?"
 
 [node name="Tutorial02" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
 visible = false
@@ -79,3 +81,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "v0.1"
 horizontal_alignment = 2
+
+[node name="OptionsButton" parent="." instance=ExtResource("5_imvie")]
+layout_mode = 1

@@ -3,8 +3,7 @@ extends Control
 
 func _ready():
 	$Version.text = "v" + ProjectSettings.get_setting("application/config/version")
-	#var sound_button = $VBoxContainer/CenterBottom/VBoxContainer/Sound
-	#sound_button.button_pressed = ProjectControls.is_audio_master_on()
+	MusicController.start_music()
 
 func _on_fullscreen_pressed():
 	ProjectControls.toggle_fullscreen()

@@ -1,0 +1,191 @@
+[gd_scene load_steps=26 format=3 uid="uid://ddi0ib0d26o2d"]
+
+[ext_resource type="Script" uid="uid://bxmoc8kbuqsus" path="res://tutorials/01_how_to_move_platforms/main.gd" id="1_nk6pa"]
+[ext_resource type="PackedScene" uid="uid://dgkatoifuyo8m" path="res://scenes/environments/tower/background.tscn" id="1_tslr7"]
+[ext_resource type="PackedScene" uid="uid://bvm0compdtyl" path="res://scenes/characters/playable/dwarf_durian/dwarf.tscn" id="2_3dxyn"]
+[ext_resource type="PackedScene" uid="uid://bnnscvbmlymhk" path="res://scenes/environments/tower/hairs.tscn" id="3_w7hdr"]
+[ext_resource type="PackedScene" uid="uid://dxtho5t78fakx" path="res://tutorials/01_how_to_move_platforms/platform.tscn" id="4_3dxyn"]
+[ext_resource type="Texture2D" uid="uid://cpv52h7npg7w" path="res://assets/ui/checkbox_on.PNG" id="5_mr714"]
+[ext_resource type="Texture2D" uid="uid://dmvo3c5eu2i60" path="res://assets/ui/checkbox_off.PNG" id="6_h6pn2"]
+[ext_resource type="PackedScene" uid="uid://ncri1t3vv55u" path="res://scenes/menus/buttons/scene_buttons.tscn" id="7_h6pn2"]
+
+[sub_resource type="Animation" id="Animation_3dxyn"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Vector2(794, 782), Vector2(1159, 782)]
+}
+
+[sub_resource type="Animation" id="Animation_w7hdr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(794, 782)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mr714"]
+_data = {
+&"Idle": SubResource("Animation_3dxyn"),
+&"RESET": SubResource("Animation_w7hdr")
+}
+
+[sub_resource type="Animation" id="Animation_h6pn2"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(1376, 850), Vector2(1376, 550)]
+}
+
+[sub_resource type="Animation" id="Animation_nk6pa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1376, 773)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_84d46"]
+_data = {
+&"Idle": SubResource("Animation_h6pn2"),
+&"RESET": SubResource("Animation_nk6pa")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nk6pa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_84d46"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_60exy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ok34m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q2yun"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fck8r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_he5yi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ep2e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2jl0d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2jikj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_17soo"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_nk6pa")
+
+[node name="Background" parent="." instance=ExtResource("1_tslr7")]
+
+[node name="Player" parent="." instance=ExtResource("2_3dxyn")]
+position = Vector2(468, 330)
+
+[node name="?" parent="." instance=ExtResource("3_w7hdr")]
+position = Vector2(609, 74)
+
+[node name="Platform" parent="." instance=ExtResource("4_3dxyn")]
+position = Vector2(458, 643)
+
+[node name="Platform2" parent="." instance=ExtResource("4_3dxyn")]
+position = Vector2(794, 782)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform2"]
+libraries = {
+&"": SubResource("AnimationLibrary_mr714")
+}
+autoplay = "Idle"
+
+[node name="Platform3" parent="." instance=ExtResource("4_3dxyn")]
+position = Vector2(1376, 773)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform3"]
+libraries = {
+&"": SubResource("AnimationLibrary_84d46")
+}
+autoplay = "Idle"
+
+[node name="MouseInteract" type="Node" parent="."]
+
+[node name="IsAddVelocity" type="CheckBox" parent="MouseInteract"]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -167.0
+offset_top = -97.0
+offset_right = 167.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nk6pa")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_84d46")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_60exy")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ok34m")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_q2yun")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_fck8r")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_he5yi")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_3ep2e")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2jl0d")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2jikj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_17soo")
+theme_override_icons/checked = ExtResource("5_mr714")
+theme_override_icons/unchecked = ExtResource("6_h6pn2")
+text = "Add Velocity"
+alignment = 1
+
+[node name="SceneButtons" parent="MouseInteract" instance=ExtResource("7_h6pn2")]
+visible = false
+
+[connection signal="toggled" from="MouseInteract/IsAddVelocity" to="." method="_on_is_add_velocity_toggled"]
