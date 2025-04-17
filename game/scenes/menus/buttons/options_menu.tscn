@@ -1,0 +1,159 @@
+[gd_scene load_steps=16 format=3 uid="uid://duv14gd0s3fo"]
+
+[ext_resource type="Script" uid="uid://c0oadyi87gmb6" path="res://scenes/menus/buttons/options_menu.gd" id="1_5pmip"]
+[ext_resource type="Texture2D" uid="uid://cvypdf48drk5m" path="res://assets/ui/options_menu/youtube_button.png" id="2_lsx7w"]
+[ext_resource type="Texture2D" uid="uid://62imjcegn15c" path="res://assets/ui/options_menu/empty.png" id="3_lsx7w"]
+[ext_resource type="Texture2D" uid="uid://ca1jk1co1ol50" path="res://assets/ui/options_menu/pause_on.png" id="4_5pmip"]
+[ext_resource type="Texture2D" uid="uid://c6bc3d88idwni" path="res://assets/ui/options_menu/options_bar.png" id="4_lsx7w"]
+[ext_resource type="Texture2D" uid="uid://caa1n5465ar1l" path="res://assets/ui/options_menu/pause_off.png" id="5_8cnud"]
+[ext_resource type="Texture2D" uid="uid://d36dvkrl250lf" path="res://assets/ui/options_menu/back.png" id="7_1w1nc"]
+[ext_resource type="Texture2D" uid="uid://c571775pph0ta" path="res://assets/ui/options_menu/sound_on.png" id="7_efj7n"]
+[ext_resource type="Texture2D" uid="uid://bvoan4p3tux0f" path="res://assets/ui/options_menu/sound_off.png" id="8_asqqy"]
+[ext_resource type="Texture2D" uid="uid://pp14qjvib3kf" path="res://assets/ui/options_menu/music_on.png" id="9_wn83f"]
+[ext_resource type="Texture2D" uid="uid://c5p67iqacgobt" path="res://assets/ui/options_menu/music_off.png" id="10_1vpin"]
+[ext_resource type="Texture2D" uid="uid://cnsq5ylluvqjc" path="res://assets/ui/options_menu/fullscreen.png" id="11_1vpin"]
+[ext_resource type="Texture2D" uid="uid://b8hip7ekq8atu" path="res://assets/ui/options_menu/info.png" id="13_0fhmv"]
+
+[sub_resource type="Gradient" id="Gradient_0fhmv"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0.635294)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cdrgf"]
+gradient = SubResource("Gradient_0fhmv")
+
+[node name="OptionsButton" type="CanvasLayer"]
+script = ExtResource("1_5pmip")
+
+[node name="Background" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_cdrgf")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -260.0
+offset_bottom = 128.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Youtube" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+process_mode = 3
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("2_lsx7w")
+
+[node name="OptionsBackground" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+button_mask = 0
+texture_normal = ExtResource("3_lsx7w")
+texture_pressed = ExtResource("4_lsx7w")
+
+[node name="PauseContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/OptionsBackground"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pause" type="TextureButton" parent="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer"]
+unique_name_in_owner = true
+process_mode = 3
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+texture_normal = ExtResource("5_8cnud")
+texture_pressed = ExtResource("4_5pmip")
+
+[node name="Sound" type="TextureButton" parent="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer"]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+button_pressed = true
+texture_normal = ExtResource("8_asqqy")
+texture_pressed = ExtResource("7_efj7n")
+
+[node name="Music" type="TextureButton" parent="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer"]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+button_pressed = true
+texture_normal = ExtResource("10_1vpin")
+texture_pressed = ExtResource("9_wn83f")
+
+[node name="FullScreen" type="TextureButton" parent="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer"]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+texture_normal = ExtResource("11_1vpin")
+
+[node name="Back" type="TextureButton" parent="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer"]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("7_1w1nc")
+
+[node name="Info" type="TextureButton" parent="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer"]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("13_0fhmv")
+
+[node name="InfoMargin" type="MarginContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="InfoText" type="RichTextLabel" parent="InfoMargin"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 55
+text = "Thanks for playing!
+I hope that you've learned something from these tutorials ;)
+
+Special thanks:
+- My wife for supporting me in this project!
+
+If you have any feedback feel free to send me a email:
+rafa.fiedo@gmail.com"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Youtube" to="." method="_on_youtube_pressed"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer/Pause" to="." method="_on_pause_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer/Sound" to="." method="_on_sound_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer/Music" to="." method="_on_music_toggled"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer/FullScreen" to="." method="_on_full_screen_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer/Info" to="." method="_on_info_pressed"]

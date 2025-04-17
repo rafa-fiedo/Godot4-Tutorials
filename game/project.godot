@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Game"
+config/name="Tutorials by RF"
 config/version="0.1"
 run/main_scene="uid://c23apbpii8nbk"
 config/features=PackedStringArray("4.4", "Forward Plus")

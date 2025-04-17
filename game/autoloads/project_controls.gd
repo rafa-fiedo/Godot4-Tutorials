@@ -2,8 +2,7 @@ extends Node
 
 func _unhandled_key_input(event):
 	if event.is_action_pressed("reset"):
-		var _err = get_tree().reload_current_scene()
-		MusicController.stop_music()
+		get_tree().reload_current_scene()
 	if event.is_action_pressed("toggle_fullscreen"):
 		toggle_fullscreen()
 
