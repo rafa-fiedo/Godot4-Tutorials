@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://bvm0compdtyl" path="res://scenes/characters/playable/dwarf_durian/dwarf.tscn" id="2_3dxyn"]
 [ext_resource type="PackedScene" uid="uid://bnnscvbmlymhk" path="res://scenes/environments/tower/hairs.tscn" id="3_w7hdr"]
 [ext_resource type="PackedScene" uid="uid://dxtho5t78fakx" path="res://tutorials/01_how_to_move_platforms/platform.tscn" id="4_3dxyn"]
-[ext_resource type="Texture2D" uid="uid://cpv52h7npg7w" path="res://assets/ui/checkbox_on.PNG" id="5_mr714"]
+[ext_resource type="Texture2D" uid="uid://cpv52h7npg7w" path="res://assets/ui/checkbox_on.png" id="5_mr714"]
 [ext_resource type="PackedScene" uid="uid://duv14gd0s3fo" path="res://scenes/menus/buttons/options_menu.tscn" id="6_84d46"]
-[ext_resource type="Texture2D" uid="uid://dmvo3c5eu2i60" path="res://assets/ui/checkbox_off.PNG" id="6_h6pn2"]
+[ext_resource type="Texture2D" uid="uid://dmvo3c5eu2i60" path="res://assets/ui/checkbox_off.png" id="6_h6pn2"]
 
 [sub_resource type="Animation" id="Animation_3dxyn"]
 resource_name = "Idle"
