@@ -18,6 +18,7 @@ func calculate_velocity(delta: float) -> void:
 
 	if Input.is_action_just_pressed("game_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		$Sound.play_jump()
 
 	var direction := Input.get_axis("game_left", "game_right")
 	if direction:
@@ -51,6 +52,9 @@ func face_good_direction() -> void:
 		$CollisionShape2D.position.x = -abs($CollisionShape2D.position.x)
 
 func _on_dead_zone_detector_area_entered(_area: Area2D) -> void:
+	$Sound.play_die()
+	
+	await get_tree().create_timer(1.5).timeout
 	call_deferred("reset_scene")
 	
 func reset_scene():

@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvm0compdtyl"]
+[gd_scene load_steps=11 format=3 uid="uid://bvm0compdtyl"]
 
 [ext_resource type="Script" uid="uid://dwt84agawxapw" path="res://scenes/characters/playable/dwarf_durian/dwarf.gd" id="1_y2f6p"]
 [ext_resource type="Texture2D" uid="uid://dyo0ra14pyp44" path="res://assets/sprites/characters/Spritesheet.png" id="2_ddeck"]
+[ext_resource type="AudioStream" uid="uid://eouoc2gmxjtt" path="res://assets/audio/sound/steps_1.wav" id="3_ddeck"]
+[ext_resource type="Script" uid="uid://cre3sng2gaqgw" path="res://scenes/characters/playable/dwarf_durian/sound.gd" id="4_7j7lh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t61fv"]
 size = Vector2(64, 122.5)
@@ -52,6 +54,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [1, 2, 3, 4, 5, 0]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Sound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 2.56988,
+"start_offset": 0.0,
+"stream": ExtResource("3_ddeck")
+}],
+"times": PackedFloat32Array(0.333333)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_686vu"]
 _data = {
@@ -91,5 +108,9 @@ collision_mask = 16
 visible = false
 position = Vector2(0, -64)
 shape = SubResource("CircleShape2D_t61fv")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+bus = &"Sound"
+script = ExtResource("4_7j7lh")
 
 [connection signal="area_entered" from="DeadZoneDetector" to="." method="_on_dead_zone_detector_area_entered"]

@@ -6,4 +6,5 @@
 script = ExtResource("1_tkfee")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -7.761
 bus = &"Music"
