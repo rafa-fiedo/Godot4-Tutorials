@@ -46,8 +46,8 @@ layout_mode = 2
 title = "How to MOVE PLATFORMS?"
 
 [node name="Tutorial02" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
-visible = false
 layout_mode = 2
+title = "How to COYOTE TIME?"
 
 [node name="Tutorial03" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
 visible = false

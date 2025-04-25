@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmr421ccmh4pc"]
+
+[ext_resource type="PackedScene" uid="uid://4q68puv3puvu" path="res://scenes/environments/tower/platform.tscn" id="1_f8nuk"]
+[ext_resource type="PackedScene" uid="uid://bvm0compdtyl" path="res://scenes/characters/playable/dwarf_durian/dwarf.tscn" id="2_wy8xl"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Platform" parent="." instance=ExtResource("1_f8nuk")]
+position = Vector2(565, 579)
+
+[node name="Platform2" parent="." instance=ExtResource("1_f8nuk")]
+position = Vector2(1363, 579)
+
+[node name="Player" parent="." instance=ExtResource("2_wy8xl")]
+position = Vector2(563, 410)

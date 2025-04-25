@@ -10,7 +10,7 @@ func _physics_process(delta: float) -> void:
 	calculate_velocity(delta)
 	animate()
 	
-	move_and_slide()
+	# move_and_slide()
 
 func calculate_velocity(delta: float) -> void:
 	if not is_on_floor():

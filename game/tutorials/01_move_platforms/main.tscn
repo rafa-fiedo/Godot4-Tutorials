@@ -1,10 +1,10 @@
 [gd_scene load_steps=26 format=3 uid="uid://ddi0ib0d26o2d"]
 
-[ext_resource type="Script" uid="uid://bxmoc8kbuqsus" path="res://tutorials/01_how_to_move_platforms/main.gd" id="1_nk6pa"]
+[ext_resource type="Script" uid="uid://bxmoc8kbuqsus" path="res://tutorials/01_move_platforms/main.gd" id="1_nk6pa"]
 [ext_resource type="PackedScene" uid="uid://dgkatoifuyo8m" path="res://scenes/environments/tower/background.tscn" id="1_tslr7"]
 [ext_resource type="PackedScene" uid="uid://bvm0compdtyl" path="res://scenes/characters/playable/dwarf_durian/dwarf.tscn" id="2_3dxyn"]
 [ext_resource type="PackedScene" uid="uid://bnnscvbmlymhk" path="res://scenes/environments/tower/hairs.tscn" id="3_w7hdr"]
-[ext_resource type="PackedScene" uid="uid://dxtho5t78fakx" path="res://tutorials/01_how_to_move_platforms/platform.tscn" id="4_3dxyn"]
+[ext_resource type="PackedScene" uid="uid://dxtho5t78fakx" path="res://tutorials/01_move_platforms/platform.tscn" id="4_3dxyn"]
 [ext_resource type="Texture2D" uid="uid://cpv52h7npg7w" path="res://assets/ui/checkbox_on.png" id="5_mr714"]
 [ext_resource type="PackedScene" uid="uid://duv14gd0s3fo" path="res://scenes/menus/buttons/options_menu.tscn" id="6_84d46"]
 [ext_resource type="Texture2D" uid="uid://dmvo3c5eu2i60" path="res://assets/ui/checkbox_off.png" id="6_h6pn2"]
