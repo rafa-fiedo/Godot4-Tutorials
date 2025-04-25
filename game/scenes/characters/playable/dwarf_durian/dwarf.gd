@@ -9,17 +9,23 @@ var is_look_left := false
 func _physics_process(delta: float) -> void:
 	calculate_velocity(delta)
 	animate()
-	
-	# move_and_slide()
+	move_and_slide()
 
 func calculate_velocity(delta: float) -> void:
+	add_gravity(delta)
+	check_jump()
+	move_left_right()
+		
+func add_gravity(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+		
+func check_jump():
 	if Input.is_action_just_pressed("game_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		$Sound.play_jump()
-
+	
+func move_left_right():
 	var direction := Input.get_axis("game_left", "game_right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -28,6 +34,10 @@ func calculate_velocity(delta: float) -> void:
 
 func animate():
 	face_good_direction()
+	if not is_on_floor():
+		pass
+		# play fly animation
+		
 	if velocity.x == 0:
 		$AnimationPlayer.play("Idle")
 		return
@@ -37,7 +47,6 @@ func animate():
 	$AnimationPlayer.play("Running")
 
 func face_good_direction() -> void:
-	
 	if is_look_left:
 		var new_value = ($Sprite2D.scale.x - ROTATION_SPEED)
 		new_value = [new_value, -1].max()

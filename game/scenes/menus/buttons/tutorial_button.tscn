@@ -6,12 +6,12 @@
 
 [node name="TutorialButton" type="MarginContainer"]
 theme_override_constants/margin_left = 60
-theme_override_constants/margin_top = 40
+theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 60
-theme_override_constants/margin_bottom = 40
+theme_override_constants/margin_bottom = 10
 script = ExtResource("1_12cnp")
 margin_horizontal = 60
-margin_vertical = 40
+margin_vertical = 10
 tutorial_scene = ExtResource("2_hxxk2")
 tutorial_image = ExtResource("3_nu3n5")
 
