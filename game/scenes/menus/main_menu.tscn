@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c23apbpii8nbk"]
+[gd_scene load_steps=6 format=3 uid="uid://c23apbpii8nbk"]
 
 [ext_resource type="Script" uid="uid://cxahmu2jadh5v" path="res://scenes/menus/main_menu.gd" id="1_afffk"]
 [ext_resource type="Texture2D" uid="uid://bi2fxongoh258" path="res://assets/ui/main_menu.png" id="2_6bivr"]
 [ext_resource type="PackedScene" uid="uid://bm2locmw78n65" path="res://scenes/menus/buttons/tutorial_button.tscn" id="2_476dn"]
 [ext_resource type="PackedScene" uid="uid://duv14gd0s3fo" path="res://scenes/menus/buttons/options_menu.tscn" id="4_6bivr"]
+[ext_resource type="Texture2D" uid="uid://byg3juhhcupos" path="res://assets/thumbnails/01_move_platforms.png" id="4_imvie"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -44,6 +45,7 @@ columns = 3
 [node name="Tutorial01" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
 layout_mode = 2
 title = "How to MOVE PLATFORMS?"
+tutorial_image = ExtResource("4_imvie")
 
 [node name="Tutorial02" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
 layout_mode = 2
