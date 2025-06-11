@@ -10,10 +10,10 @@
 [node name="Background" parent="." instance=ExtResource("1_wy8xl")]
 
 [node name="Platform" parent="." instance=ExtResource("1_f8nuk")]
-position = Vector2(595, 579)
+position = Vector2(595, 616)
 
 [node name="Platform2" parent="." instance=ExtResource("1_f8nuk")]
-position = Vector2(1255, 579)
+position = Vector2(1255, 607)
 
 [node name="Player" parent="." instance=ExtResource("2_wy8xl")]
 unique_name_in_owner = true
@@ -32,7 +32,7 @@ grow_horizontal = 2
 columns = 2
 script = ExtResource("4_100ct")
 
-[node name="IsOnFloorText" type="Label" parent="UI/StatusGrid"]
+[node name="IsOnFloorLabel" type="Label" parent="UI/StatusGrid"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
@@ -45,7 +45,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
 text = "false"
 
-[node name="CoyoteTimeText" type="Label" parent="UI/StatusGrid"]
+[node name="CoyoteTimeLabel" type="Label" parent="UI/StatusGrid"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
@@ -57,3 +57,16 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
 text = "1.500"
+
+[node name="InputBufferLabel" type="Label" parent="UI/StatusGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Input Buffer: "
+horizontal_alignment = 2
+
+[node name="InputBuffer" type="Label" parent="UI/StatusGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "0.500"

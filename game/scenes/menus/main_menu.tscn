@@ -45,41 +45,29 @@ columns = 3
 
 [node name="Tutorial01" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
 layout_mode = 2
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_bottom = 10
 title = "How to MOVE PLATFORMS?"
 tutorial_image = ExtResource("4_imvie")
 
 [node name="Tutorial02" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
 layout_mode = 2
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_bottom = 10
 title = "How to COYOTE TIME?"
 tutorial_scene = ExtResource("5_ng0o5")
 
 [node name="Tutorial03" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
 visible = false
 layout_mode = 2
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_bottom = 10
 
 [node name="Tutorial04" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
 visible = false
 layout_mode = 2
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_bottom = 10
 
 [node name="Tutorial05" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
 visible = false
 layout_mode = 2
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_bottom = 10
 
 [node name="Tutorial06" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
 visible = false
 layout_mode = 2
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_bottom = 10
 
 [node name="Version" type="Label" parent="."]
 layout_mode = 1

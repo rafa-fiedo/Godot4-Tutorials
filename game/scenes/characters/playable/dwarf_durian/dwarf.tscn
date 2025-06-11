@@ -1,12 +1,42 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvm0compdtyl"]
+[gd_scene load_steps=13 format=3 uid="uid://bvm0compdtyl"]
 
 [ext_resource type="Script" uid="uid://dwt84agawxapw" path="res://scenes/characters/playable/dwarf_durian/dwarf.gd" id="1_y2f6p"]
-[ext_resource type="Texture2D" uid="uid://dyo0ra14pyp44" path="res://assets/sprites/characters/Spritesheet.png" id="2_ddeck"]
+[ext_resource type="Texture2D" uid="uid://cruc3ue30jjag" path="res://assets/sprites/characters/Dorin ThunderBeard.png" id="2_7j7lh"]
 [ext_resource type="AudioStream" uid="uid://eouoc2gmxjtt" path="res://assets/audio/sound/steps_1.wav" id="3_ddeck"]
 [ext_resource type="Script" uid="uid://cre3sng2gaqgw" path="res://scenes/characters/playable/dwarf_durian/sound.gd" id="4_7j7lh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t61fv"]
 size = Vector2(64, 122.5)
+
+[sub_resource type="Animation" id="Animation_hugp7"]
+resource_name = "FlyBottom"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="Animation" id="Animation_7j7lh"]
+resource_name = "FlyUp"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
 
 [sub_resource type="Animation" id="Animation_t61fv"]
 resource_name = "Idle"
@@ -72,6 +102,8 @@ tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_686vu"]
 _data = {
+&"FlyBottom": SubResource("Animation_hugp7"),
+&"FlyUp": SubResource("Animation_7j7lh"),
 &"Idle": SubResource("Animation_t61fv"),
 &"RESET": SubResource("Animation_hss88"),
 &"Running": SubResource("Animation_686vu")
@@ -86,9 +118,9 @@ script = ExtResource("1_y2f6p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -64)
-texture = ExtResource("2_ddeck")
+texture = ExtResource("2_7j7lh")
 hframes = 3
-vframes = 2
+vframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-10, -62.75)
@@ -112,5 +144,13 @@ shape = SubResource("CircleShape2D_t61fv")
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
 bus = &"Sound"
 script = ExtResource("4_7j7lh")
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="InputBufferTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
 
 [connection signal="area_entered" from="DeadZoneDetector" to="." method="_on_dead_zone_detector_area_entered"]
