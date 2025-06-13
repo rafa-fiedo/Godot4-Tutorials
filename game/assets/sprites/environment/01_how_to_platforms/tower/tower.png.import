@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bexqf5kru2pvh"
-path="res://.godot/imported/hairs_sheet.png-86af20d4159ee089564a2817b0a33d9e.ctex"
+uid="uid://beqixdowcieo0"
+path="res://.godot/imported/tower.png-cc04466db9f5672ee5232b17ce04d575.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/environment/tower/hairs_sheet.png"
-dest_files=["res://.godot/imported/hairs_sheet.png-86af20d4159ee089564a2817b0a33d9e.ctex"]
+source_file="res://assets/sprites/environment/01_how_to_platforms/tower/tower.png"
+dest_files=["res://.godot/imported/tower.png-cc04466db9f5672ee5232b17ce04d575.ctex"]
 
 [params]
 

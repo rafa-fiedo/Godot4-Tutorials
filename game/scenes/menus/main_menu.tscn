@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bm2locmw78n65" path="res://scenes/menus/buttons/tutorial_button.tscn" id="2_476dn"]
 [ext_resource type="PackedScene" uid="uid://duv14gd0s3fo" path="res://scenes/menus/buttons/options_menu.tscn" id="4_6bivr"]
 [ext_resource type="Texture2D" uid="uid://byg3juhhcupos" path="res://assets/thumbnails/01_move_platforms.png" id="4_imvie"]
-[ext_resource type="PackedScene" uid="uid://dmr421ccmh4pc" path="res://scenes/test_scene/main.tscn" id="5_ng0o5"]
+[ext_resource type="PackedScene" uid="uid://bso4ikd5vncnb" path="res://tutorials/02_coyote_time/coyote_tutorial.tscn" id="5_ng0o5"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3

@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckxg6644nm1j2"]
+
+[ext_resource type="Texture2D" uid="uid://d2buswvpepkv3" path="res://assets/sprites/environment/02_how_to_coyote/02_tutorial.png" id="1_hklpg"]
+[ext_resource type="Texture2D" uid="uid://0n8th5r17dxm" path="res://assets/sprites/environment/02_how_to_coyote/sign.png" id="2_t7fld"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkrld"]
+size = Vector2(5910, 886)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hklpg"]
+size = Vector2(1016.5, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7fld"]
+size = Vector2(355, 68)
+
+[node name="Background" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_hklpg")
+centered = false
+
+[node name="Sign" type="Sprite2D" parent="."]
+position = Vector2(1755, 371)
+texture = ExtResource("2_t7fld")
+
+[node name="ResetArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ResetArea"]
+position = Vector2(902, 1856)
+shape = SubResource("RectangleShape2D_tkrld")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ResetArea"]
+position = Vector2(-3147, 706)
+shape = SubResource("RectangleShape2D_tkrld")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ResetArea"]
+position = Vector2(5073, 706)
+shape = SubResource("RectangleShape2D_tkrld")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(506, 534)
+shape = SubResource("RectangleShape2D_hklpg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1767, 530)
+shape = SubResource("RectangleShape2D_t7fld")

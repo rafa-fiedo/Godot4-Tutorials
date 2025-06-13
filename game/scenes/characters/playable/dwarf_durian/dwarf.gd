@@ -1,10 +1,12 @@
 extends CharacterBody2D
 
-const SPEED := 300.0
+const SPEED := 400.0
 const JUMP_VELOCITY := -660.0
 const ROTATION_SPEED := 0.3
 
 var is_look_left := false
+var is_coyote_timer_on := true
+var is_input_buffer_timer_on := true
 
 func _physics_process(delta: float) -> void:
 	calculate_velocity(delta)
@@ -20,27 +22,24 @@ func add_gravity(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-# as a extra task you can try to optimalize this code by
-# checking the last state of 'is on floor' and start timer only once
-# instead every frame
-# i can also do more complicated solution later in the video
-# https://www.youtube.com/watch?v=RFix_Kg2Di0
-
-# coyoyte time -> something around 0.15
 func jump_logic():
 	if is_on_floor():
 		$CoyoteTimer.start()
-		
+	
 	if Input.is_action_just_pressed("game_jump"):
 		$InputBufferTimer.start()
 	
-	if not $InputBufferTimer.is_stopped():
-		if is_on_floor() or not $CoyoteTimer.is_stopped():
-			make_jump()
-			$CoyoteTimer.stop()
-			$InputBufferTimer.stop()
+	if not $CoyoteTimer.is_stopped() and not $InputBufferTimer.is_stopped():
+		make_jump()
+		$CoyoteTimer.stop()
+		$InputBufferTimer.stop()
+	
+	if not is_coyote_timer_on:
+		$CoyoteTimer.stop()
+	
+	if not is_input_buffer_timer_on:
+		$InputBufferTimer.stop()
 
-			
 func make_jump():
 	velocity.y = JUMP_VELOCITY
 	$Sound.play_jump()
@@ -100,3 +99,9 @@ func get_coyote_time():
 	
 func get_input_buffer_time():
 	return round(($InputBufferTimer.time_left) * 100) / 100.0
+
+func toggle_is_coyote_time(is_on):
+	is_coyote_timer_on = is_on
+	
+func toggle_is_input_buffer_time(is_on):
+	is_input_buffer_timer_on = is_on

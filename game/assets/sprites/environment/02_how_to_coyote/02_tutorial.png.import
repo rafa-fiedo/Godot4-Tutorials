@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfcvge1jbep6k"
-path="res://.godot/imported/platform.PNG-17717fb4f4929ae080532592a4b53e1a.ctex"
+uid="uid://d2buswvpepkv3"
+path="res://.godot/imported/02_tutorial.png-df250031ea88a386b518c0e6e625e42a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/environment/tower/platform.PNG"
-dest_files=["res://.godot/imported/platform.PNG-17717fb4f4929ae080532592a4b53e1a.ctex"]
+source_file="res://assets/sprites/environment/02_how_to_coyote/02_tutorial.png"
+dest_files=["res://.godot/imported/02_tutorial.png-df250031ea88a386b518c0e6e625e42a.ctex"]
 
 [params]
 

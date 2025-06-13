@@ -146,11 +146,11 @@ bus = &"Sound"
 script = ExtResource("4_7j7lh")
 
 [node name="CoyoteTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.2
 one_shot = true
 
 [node name="InputBufferTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.2
 one_shot = true
 
 [connection signal="area_entered" from="DeadZoneDetector" to="." method="_on_dead_zone_detector_area_entered"]

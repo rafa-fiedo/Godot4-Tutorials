@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bnnscvbmlymhk"]
 
-[ext_resource type="Texture2D" uid="uid://bexqf5kru2pvh" path="res://assets/sprites/environment/tower/hairs_sheet.png" id="1_6uur2"]
+[ext_resource type="Texture2D" uid="uid://bexqf5kru2pvh" path="res://assets/sprites/environment/01_how_to_platforms/tower/hairs_sheet.png" id="1_6uur2"]
 
 [sub_resource type="Animation" id="Animation_xleh1"]
 resource_name = "Idle"
