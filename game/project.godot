@@ -101,3 +101,7 @@ game_jump={
 2d_physics/layer_3="Enemy"
 2d_physics/layer_4="Usage"
 2d_physics/layer_5="DeadZone"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.917647, 0.917647, 0.917647, 1)

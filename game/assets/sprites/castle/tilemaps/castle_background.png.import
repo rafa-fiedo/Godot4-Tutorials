@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djnqd1sxwsrk1"
-path="res://.godot/imported/castle_tilemap.png-c84c9fc0e53787b2b55364420283ef12.ctex"
+uid="uid://c68lphyxtxf7j"
+path="res://.godot/imported/castle_background.png-658158b759028cd81dd805dae02283f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tilemaps/castle_tilemap.png"
-dest_files=["res://.godot/imported/castle_tilemap.png-c84c9fc0e53787b2b55364420283ef12.ctex"]
+source_file="res://assets/sprites/castle/tilemaps/castle_background.png"
+dest_files=["res://.godot/imported/castle_background.png-658158b759028cd81dd805dae02283f8.ctex"]
 
 [params]
 
