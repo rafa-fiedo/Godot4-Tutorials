@@ -4,11 +4,15 @@ const SPEED := 400.0
 const JUMP_VELOCITY := -660.0
 const ROTATION_SPEED := 0.3
 
+var is_live := true
+
 var is_look_left := false
 var is_coyote_timer_on := true
 var is_input_buffer_timer_on := true
 
 func _physics_process(delta: float) -> void:
+	if not is_live:
+		return
 	calculate_velocity(delta)
 	animate()
 	move_and_slide()
@@ -78,14 +82,29 @@ func face_good_direction() -> void:
 		$Sprite2D.scale.x = new_value
 		$CollisionShape2D.scale.x = new_value
 		$CollisionShape2D.position.x = abs($CollisionShape2D.position.x)
+		$HitBoxArea.scale.x = new_value
+		$HitBoxArea.position.x = abs($HitBoxArea.position.x)
 	else:
 		var new_value = ($Sprite2D.scale.x + ROTATION_SPEED)
 		new_value = [new_value, 1].min()
 		$Sprite2D.scale.x = new_value
 		$CollisionShape2D.scale.x = new_value
 		$CollisionShape2D.position.x = -abs($CollisionShape2D.position.x)
+		$HitBoxArea.scale.x = new_value
+		$HitBoxArea.position.x = -abs($HitBoxArea.position.x)
 
 func _on_dead_zone_detector_area_entered(_area: Area2D) -> void:
+	$Sound.play_die()
+	if find_child("Camera2D"):
+		$Camera2D.drag_top_margin = 99999
+		$Camera2D.drag_bottom_margin = 99999
+		
+	
+	await get_tree().create_timer(1.5).timeout
+	call_deferred("reset_scene")
+	
+func die() -> void:
+	is_live = false
 	$Sound.play_die()
 	
 	await get_tree().create_timer(1.5).timeout

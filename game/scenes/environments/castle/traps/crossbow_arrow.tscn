@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://rkhskv34inhu"]
+
+[ext_resource type="Script" uid="uid://5vbuvbmhl4xp" path="res://scenes/environments/castle/traps/crossbow_arrow.gd" id="1_62g2c"]
+[ext_resource type="Texture2D" uid="uid://b6gfl77iwbj0k" path="res://assets/sprites/castle/arrow.png" id="1_m1nwy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1nwy"]
+size = Vector2(143.25, 6)
+
+[node name="CrossbowArrow" type="CharacterBody2D"]
+z_index = -2
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_62g2c")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+texture = ExtResource("1_m1nwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18.625, -1)
+shape = SubResource("RectangleShape2D_m1nwy")
+
+[node name="DamangeArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitoring = false
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DamangeArea"]
+position = Vector2(-37, 1)
+polygon = PackedVector2Array(-55, 2, -11, -16, -12, 15)
+
+[connection signal="area_entered" from="DamangeArea" to="." method="_on_damange_area_area_entered"]

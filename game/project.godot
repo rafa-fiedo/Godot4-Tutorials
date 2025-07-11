@@ -96,11 +96,11 @@ game_jump={
 
 [layer_names]
 
-2d_physics/layer_1="Environment"
-2d_physics/layer_2="Player"
-2d_physics/layer_3="Enemy"
-2d_physics/layer_4="Usage"
-2d_physics/layer_5="DeadZone"
+2d_physics/layer_1="level"
+2d_physics/layer_2="player"
+2d_physics/layer_3="enemy"
+2d_physics/layer_4="projectile"
+2d_physics/layer_5="neutral"
 
 [rendering]
 
