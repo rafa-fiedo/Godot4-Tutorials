@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://2q1e321sjev4"]
+
+[ext_resource type="Texture2D" uid="uid://do8gc6kumfrkc" path="res://assets/sprites/castle/button.png" id="1_m047q"]
+[ext_resource type="Script" uid="uid://vs7ytdfhymyr" path="res://scenes/environments/castle/traps/button.gd" id="1_w8fsp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydfhc"]
+size = Vector2(131, 17.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m047q"]
+size = Vector2(163, 45)
+
+[node name="Button" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_w8fsp")
+
+[node name="Button" type="Sprite2D" parent="."]
+position = Vector2(2, -45)
+texture = ExtResource("1_m047q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -41.5625)
+shape = SubResource("RectangleShape2D_ydfhc")
+debug_color = Color(0, 0.643161, 0.305056, 0.42)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.5, -13.5)
+shape = SubResource("RectangleShape2D_m047q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

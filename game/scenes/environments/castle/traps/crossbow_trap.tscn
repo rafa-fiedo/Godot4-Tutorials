@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbweyctcgglng"]
+[gd_scene load_steps=9 format=3 uid="uid://dbweyctcgglng"]
 
 [ext_resource type="Script" uid="uid://cerscwxntq5qu" path="res://scenes/environments/castle/traps/crossbow_trap.gd" id="1_hedw3"]
 [ext_resource type="PackedScene" uid="uid://rkhskv34inhu" path="res://scenes/environments/castle/traps/crossbow_arrow.tscn" id="1_m3is6"]
 [ext_resource type="Texture2D" uid="uid://ck8l2dabovr1l" path="res://assets/sprites/castle/crossbow_trap.png" id="1_nyg12"]
+[ext_resource type="AudioStream" uid="uid://dx6o74tkp3u5n" path="res://assets/audio/sound/castle/crossbow/shoot_1.wav" id="4_0228k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hedw3"]
 size = Vector2(176, 81)
@@ -36,6 +37,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [1, 2, 3, 4, 5, 6]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eeo3f"]
 _data = {
@@ -67,3 +82,6 @@ libraries = {
 
 [node name="CrossbowArrow" parent="." instance=ExtResource("1_m3is6")]
 position = Vector2(-30, -71)
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0228k")

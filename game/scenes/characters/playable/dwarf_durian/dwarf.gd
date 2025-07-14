@@ -98,14 +98,14 @@ func _on_dead_zone_detector_area_entered(_area: Area2D) -> void:
 	if find_child("Camera2D"):
 		$Camera2D.drag_top_margin = 99999
 		$Camera2D.drag_bottom_margin = 99999
-		
 	
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(2).timeout
 	call_deferred("reset_scene")
 	
 func die() -> void:
 	is_live = false
 	$Sound.play_die()
+	$AnimationPlayer.play("Die")
 	
 	await get_tree().create_timer(1.5).timeout
 	call_deferred("reset_scene")

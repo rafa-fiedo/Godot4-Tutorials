@@ -4,15 +4,15 @@ var die_db = 0
 var jump_db = -5
 
 var sounds_die = [
-	preload("res://assets/audio/sound/dead_cliff_1.wav"),
-	preload("res://assets/audio/sound/dead_cliff_2.wav"),
-	preload("res://assets/audio/sound/dead_cliff_2.wav"),
+	preload("uid://cflqh154enbvj"),
+	preload("uid://bykvvq1vxsfs7"),
+	preload("uid://cbh4tnwot4p6t"),
 ]
 
 var sounds_jump = [
-	preload("res://assets/audio/sound/jump_1.wav"),
-	preload("res://assets/audio/sound/jump_2.wav"),
-	preload("res://assets/audio/sound/jump_3.wav"),
+	preload("uid://bjnbg17o8lbyj"),
+	preload("uid://cyndm1ph2m4qq"),
+	preload("uid://bwdx30lubnx5h"),
 ]
 
 func play_die():

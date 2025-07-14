@@ -4,9 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bvm0compdtyl" path="res://scenes/characters/playable/dwarf_durian/dwarf.tscn" id="2_paxy5"]
 [ext_resource type="PackedScene" uid="uid://duoeyywsnfs4j" path="res://scenes/tilemaps/castle_tilemap.tscn" id="2_ydfhc"]
 [ext_resource type="PackedScene" uid="uid://dbweyctcgglng" path="res://scenes/environments/castle/traps/crossbow_trap.tscn" id="3_ydfhc"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydfhc"]
-size = Vector2(200, 29)
+[ext_resource type="PackedScene" uid="uid://2q1e321sjev4" path="res://scenes/environments/castle/traps/button.tscn" id="5_m2s7u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_luqrw"]
 size = Vector2(500, 20)
@@ -25,6 +23,9 @@ tile_map_data = PackedByteArray("AADg//b/AAAAAAAAAADg//f/AAAAAAEAAADg//j/AAAAAAE
 [node name="CrossbowTrap" parent="." instance=ExtResource("3_ydfhc")]
 position = Vector2(2008, 1233)
 
+[node name="Button" parent="." instance=ExtResource("5_m2s7u")]
+position = Vector2(1211, 1245)
+
 [node name="Player" parent="." instance=ExtResource("2_paxy5")]
 position = Vector2(786, 1020)
 
@@ -34,15 +35,6 @@ drag_vertical_enabled = true
 drag_left_margin = 0.1
 drag_top_margin = 0.1
 
-[node name="Trigger" type="Area2D" parent="."]
-position = Vector2(1205, 1172)
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger"]
-position = Vector2(11, 47.5)
-shape = SubResource("RectangleShape2D_ydfhc")
-
 [node name="DeadZone" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 0
@@ -51,6 +43,6 @@ collision_mask = 0
 position = Vector2(3029, 1391)
 shape = SubResource("RectangleShape2D_luqrw")
 
-[connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]
+[connection signal="body_entered" from="Button" to="." method="_on_button_body_entered"]
 
 [editable path="CastleTilemap"]
