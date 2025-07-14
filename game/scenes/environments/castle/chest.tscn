@@ -1,14 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2n7sxlco878a"]
+[gd_scene load_steps=4 format=3 uid="uid://c2n7sxlco878a"]
 
+[ext_resource type="Script" uid="uid://box73afpnsy5j" path="res://scenes/environments/castle/chest.gd" id="1_42wyx"]
 [ext_resource type="Texture2D" uid="uid://502np4lgpr76" path="res://assets/sprites/castle/chest.png" id="1_tc7jt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tc7jt"]
-radius = 33.0151
+radius = 40.05
 
-[node name="Node2D" type="Area2D"]
+[node name="Chest" type="Area2D"]
 z_index = -1
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_42wyx")
 
-[node name="Chest" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(6, -59)
 texture = ExtResource("1_tc7jt")
 hframes = 2
@@ -16,3 +21,6 @@ hframes = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, -40)
 shape = SubResource("CircleShape2D_tc7jt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -44,8 +44,8 @@ collision_mask = 0
 position = Vector2(3029, 1391)
 shape = SubResource("RectangleShape2D_luqrw")
 
-[node name="Node2D" parent="." instance=ExtResource("6_2vj3j")]
-position = Vector2(2443, 977)
+[node name="Chest" parent="." instance=ExtResource("6_2vj3j")]
+position = Vector2(2441, 977)
 
 [connection signal="body_entered" from="Button" to="." method="_on_button_body_entered"]
 
