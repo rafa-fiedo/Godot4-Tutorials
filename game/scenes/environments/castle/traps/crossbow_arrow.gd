@@ -1,13 +1,9 @@
 extends CharacterBody2D
 
-var direction = Vector2(-1, 0)
-var speed = 30
-
+var direction = Vector2(-30, 0)
 var is_active = false
 
 func _ready() -> void:
-	direction *= speed
-	
 	set_active(false)
 
 func _process(_delta: float) -> void:
@@ -21,9 +17,8 @@ func shoot() -> void:
 	
 func set_active(value: bool) -> void:
 	is_active = value
-	$DamangeArea.set_deferred("monitoring", value)
+	$DamageArea.set_deferred("monitoring", value)
 
-func _on_damange_area_area_entered(area: Area2D) -> void:
+func _on_damage_area_area_entered(area: Area2D) -> void:
 	var player = area.get_parent()
-	player.die()
-	
+	player.hit()
