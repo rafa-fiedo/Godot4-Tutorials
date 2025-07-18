@@ -127,3 +127,6 @@ func toggle_is_coyote_time(is_on):
 	
 func toggle_is_input_buffer_time(is_on):
 	is_input_buffer_timer_on = is_on
+
+func _on_dead_zone_area_area_entered(_area: Area2D) -> void:
+	die()
