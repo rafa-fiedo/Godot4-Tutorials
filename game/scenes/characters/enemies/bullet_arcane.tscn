@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://brwhpbgu3qoh8"]
+
+[ext_resource type="Texture2D" uid="uid://cqmm1n5tqrhjo" path="res://assets/sprites/enemies/bullets/arcane.png" id="1_5m5o8"]
+[ext_resource type="Script" uid="uid://lttntroaa65b" path="res://scenes/characters/enemies/bullet_arcane.gd" id="1_7cdcn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mlgck"]
+radius = 15.0
+
+[node name="BulletArcane" type="Area2D"]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_7cdcn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5m5o8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mlgck")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

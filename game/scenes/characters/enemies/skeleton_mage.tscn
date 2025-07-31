@@ -1,0 +1,128 @@
+[gd_scene load_steps=10 format=3 uid="uid://dy4uis57kkwf4"]
+
+[ext_resource type="Script" uid="uid://ck0ekx6nejpwr" path="res://scenes/characters/enemies/skeleton_mage.gd" id="1_4ig42"]
+[ext_resource type="Texture2D" uid="uid://df3fci6cc4h8j" path="res://assets/sprites/enemies/skeleton_mage.png" id="1_il5at"]
+[ext_resource type="PackedScene" uid="uid://brwhpbgu3qoh8" path="res://scenes/characters/enemies/bullet_arcane.tscn" id="2_v8w75"]
+
+[sub_resource type="Animation" id="Animation_06yc6"]
+resource_name = "Attack"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.195611, 0.489027),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [6, 7, 8]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.633333, 2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"attack"
+}, {
+"args": [],
+"method": &"start_patrol"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_il5at"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_4ig42"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_v8w75"]
+resource_name = "Run"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.195611, 0.395297, 0.603133, 0.806894),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v8w75"]
+_data = {
+&"Attack": SubResource("Animation_06yc6"),
+&"Idle": SubResource("Animation_il5at"),
+&"RESET": SubResource("Animation_4ig42"),
+&"Run": SubResource("Animation_v8w75")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_il5at"]
+size = Vector2(33, 99)
+
+[node name="SkeletonMage" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 39
+script = ExtResource("1_4ig42")
+bullet_scene = ExtResource("2_v8w75")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, -96)
+texture = ExtResource("1_il5at")
+hframes = 3
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_v8w75")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, -50)
+shape = SubResource("RectangleShape2D_il5at")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-146, -65)
+rotation = 1.56518
+target_position = Vector2(0, 1800)
+collision_mask = 2
+
+[node name="BulletPosition" type="Marker2D" parent="."]
+position = Vector2(-86, -171)
+gizmo_extents = 72.1
