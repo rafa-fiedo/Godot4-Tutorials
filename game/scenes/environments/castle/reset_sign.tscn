@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1jbsl0x2xehj"]
+
+[ext_resource type="Script" uid="uid://bhktjud0ll3nt" path="res://scenes/environments/castle/reset_sign.gd" id="1_8gr5y"]
+[ext_resource type="Texture2D" uid="uid://c0i8s72t450ma" path="res://assets/sprites/castle/reset_sign.png" id="1_h131l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h131l"]
+size = Vector2(20, 171)
+
+[node name="ResetSign" type="Area2D"]
+z_index = -1
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_8gr5y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7, -76)
+texture = ExtResource("1_h131l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -84)
+shape = SubResource("RectangleShape2D_h131l")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

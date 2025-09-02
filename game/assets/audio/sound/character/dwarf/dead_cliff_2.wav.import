@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bykvvq1vxsfs7"
-path="res://.godot/imported/dead_cliff_2.wav-939a0285574c893fc2548fe1f486f9ea.sample"
+path="res://.godot/imported/dead_cliff_2.wav-2c3010ee5f48f42a5bddc557dddcbea1.sample"
 
 [deps]
 
-source_file="res://assets/audio/sound/character/player/dead_cliff_2.wav"
-dest_files=["res://.godot/imported/dead_cliff_2.wav-939a0285574c893fc2548fe1f486f9ea.sample"]
+source_file="res://assets/audio/sound/character/dwarf/dead_cliff_2.wav"
+dest_files=["res://.godot/imported/dead_cliff_2.wav-2c3010ee5f48f42a5bddc557dddcbea1.sample"]
 
 [params]
 

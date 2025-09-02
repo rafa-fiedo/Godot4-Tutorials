@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqlaq2b2v72n5"
-path="res://.godot/imported/arcane.png-d88b2ec6700395fe89d5e0c368feb4de.ctex"
+uid="uid://c0i8s72t450ma"
+path="res://.godot/imported/reset_sign.png-77aae938783b67dc439fbb8096f32381.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemies/bullets/arcane.png"
-dest_files=["res://.godot/imported/arcane.png-d88b2ec6700395fe89d5e0c368feb4de.ctex"]
+source_file="res://assets/sprites/castle/reset_sign.png"
+dest_files=["res://.godot/imported/reset_sign.png-77aae938783b67dc439fbb8096f32381.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqlaq2b2v72n5"
-path="res://.godot/imported/arcane.png-d88b2ec6700395fe89d5e0c368feb4de.ctex"
+uid="uid://b445yvfmy80ry"
+path="res://.godot/imported/food.png-1d3fd723a1b3429e38e7a5960cc82b6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemies/bullets/arcane.png"
-dest_files=["res://.godot/imported/arcane.png-d88b2ec6700395fe89d5e0c368feb4de.ctex"]
+source_file="res://assets/sprites/pickups/food.png"
+dest_files=["res://.godot/imported/food.png-1d3fd723a1b3429e38e7a5960cc82b6b.ctex"]
 
 [params]
 

@@ -102,8 +102,13 @@ func _on_dead_zone_detector_area_entered(_area: Area2D) -> void:
 	await get_tree().create_timer(2).timeout
 	call_deferred("reset_scene")
 
-func hit(_amount=99):
-	die()
+func hit():
+	$Sound.play_hit()
+	$HpBar.hit()
+
+func food_pickup():
+	$Sound.play_food_pickup()
+	$HpBar.heal()
 
 func die() -> void:
 	is_live = false
