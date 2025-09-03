@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cvypdf48drk5m" path="res://assets/ui/options_menu/youtube_button.png" id="2_lsx7w"]
 [ext_resource type="Texture2D" uid="uid://62imjcegn15c" path="res://assets/ui/options_menu/empty.png" id="3_lsx7w"]
 [ext_resource type="Texture2D" uid="uid://ca1jk1co1ol50" path="res://assets/ui/options_menu/pause_on.png" id="4_5pmip"]
-[ext_resource type="Texture2D" uid="uid://c6bc3d88idwni" path="res://assets/ui/options_menu/options_bar.png" id="4_lsx7w"]
+[ext_resource type="Texture2D" uid="uid://dku76ir6dmo26" path="res://assets/ui/options_menu/options_bar_6.png" id="4_cdrgf"]
 [ext_resource type="Texture2D" uid="uid://caa1n5465ar1l" path="res://assets/ui/options_menu/pause_off.png" id="5_8cnud"]
 [ext_resource type="Texture2D" uid="uid://d36dvkrl250lf" path="res://assets/ui/options_menu/back.png" id="7_1w1nc"]
 [ext_resource type="Texture2D" uid="uid://c571775pph0ta" path="res://assets/ui/options_menu/sound_on.png" id="7_efj7n"]
@@ -62,7 +62,7 @@ focus_mode = 0
 toggle_mode = true
 button_mask = 0
 texture_normal = ExtResource("3_lsx7w")
-texture_pressed = ExtResource("4_lsx7w")
+texture_pressed = ExtResource("4_cdrgf")
 
 [node name="PauseContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/OptionsBackground"]
 layout_mode = 0
@@ -109,13 +109,13 @@ focus_mode = 0
 toggle_mode = true
 texture_normal = ExtResource("11_1vpin")
 
-[node name="Back" type="TextureButton" parent="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer"]
+[node name="Discord" type="TextureButton" parent="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer"]
 unique_name_in_owner = true
 process_mode = 2
 visible = false
 layout_mode = 2
 focus_mode = 0
-texture_normal = ExtResource("7_1w1nc")
+texture_normal = ExtResource("13_cdrgf")
 
 [node name="Info" type="TextureButton" parent="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer"]
 unique_name_in_owner = true
@@ -125,13 +125,13 @@ layout_mode = 2
 focus_mode = 0
 texture_normal = ExtResource("13_0fhmv")
 
-[node name="Discord" type="TextureButton" parent="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer"]
+[node name="Back" type="TextureButton" parent="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer"]
 unique_name_in_owner = true
 process_mode = 2
 visible = false
 layout_mode = 2
 focus_mode = 0
-texture_normal = ExtResource("13_cdrgf")
+texture_normal = ExtResource("7_1w1nc")
 
 [node name="InfoMargin" type="MarginContainer" parent="."]
 visible = false
@@ -164,6 +164,6 @@ rafa.fiedo@gmail.com"
 [connection signal="toggled" from="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer/Sound" to="." method="_on_sound_toggled"]
 [connection signal="toggled" from="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer/Music" to="." method="_on_music_toggled"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer/FullScreen" to="." method="_on_full_screen_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer/Info" to="." method="_on_info_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer/Discord" to="." method="_on_discord_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer/Info" to="." method="_on_info_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer/Back" to="." method="_on_back_pressed"]
