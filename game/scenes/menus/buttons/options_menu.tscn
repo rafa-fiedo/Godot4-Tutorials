@@ -23,6 +23,7 @@ colors = PackedColorArray(0, 0, 0, 0.635294)
 gradient = SubResource("Gradient_0fhmv")
 
 [node name="OptionsButton" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_5pmip")
 
 [node name="Background" type="TextureRect" parent="."]
