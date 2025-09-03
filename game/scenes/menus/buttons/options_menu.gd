@@ -31,6 +31,9 @@ func _on_full_screen_pressed() -> void:
 func _on_back_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file(main_menu_uid)
+	
+func _on_discord_pressed() -> void:
+	OS.shell_open("https://discord.gg/U3QEdYMe")
 
 func _on_info_pressed() -> void:
 	$InfoMargin.visible = !$InfoMargin.visible
@@ -42,6 +45,7 @@ func setup_all_buttons(is_on):
 	%Music.visible = is_on
 	%FullScreen.visible = is_on
 	%Back.visible = is_on and not is_main_menu
+	%Discord.visible = is_on
 	%Info.visible = is_on and is_main_menu
 	$Background.visible = is_on
 	$InfoMargin.visible = false

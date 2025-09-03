@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://duv14gd0s3fo"]
+[gd_scene load_steps=17 format=3 uid="uid://duv14gd0s3fo"]
 
 [ext_resource type="Script" uid="uid://c0oadyi87gmb6" path="res://scenes/menus/buttons/options_menu.gd" id="1_5pmip"]
 [ext_resource type="Texture2D" uid="uid://cvypdf48drk5m" path="res://assets/ui/options_menu/youtube_button.png" id="2_lsx7w"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c5p67iqacgobt" path="res://assets/ui/options_menu/music_off.png" id="10_1vpin"]
 [ext_resource type="Texture2D" uid="uid://cnsq5ylluvqjc" path="res://assets/ui/options_menu/fullscreen.png" id="11_1vpin"]
 [ext_resource type="Texture2D" uid="uid://b8hip7ekq8atu" path="res://assets/ui/options_menu/info.png" id="13_0fhmv"]
+[ext_resource type="Texture2D" uid="uid://dejrty05hev6y" path="res://assets/ui/options_menu/discord.png" id="13_cdrgf"]
 
 [sub_resource type="Gradient" id="Gradient_0fhmv"]
 offsets = PackedFloat32Array(0)
@@ -124,6 +125,14 @@ layout_mode = 2
 focus_mode = 0
 texture_normal = ExtResource("13_0fhmv")
 
+[node name="Discord" type="TextureButton" parent="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer"]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("13_cdrgf")
+
 [node name="InfoMargin" type="MarginContainer" parent="."]
 visible = false
 anchors_preset = 15
@@ -157,3 +166,4 @@ rafa.fiedo@gmail.com"
 [connection signal="pressed" from="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer/FullScreen" to="." method="_on_full_screen_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer/Info" to="." method="_on_info_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/OptionsBackground/PauseContainer/Discord" to="." method="_on_discord_pressed"]
