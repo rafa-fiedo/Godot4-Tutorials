@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c23apbpii8nbk"]
+[gd_scene load_steps=10 format=3 uid="uid://c23apbpii8nbk"]
 
 [ext_resource type="Script" uid="uid://cxahmu2jadh5v" path="res://scenes/menus/main_menu.gd" id="1_afffk"]
 [ext_resource type="Texture2D" uid="uid://bi2fxongoh258" path="res://assets/ui/main_menu.png" id="2_6bivr"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://byg3juhhcupos" path="res://assets/thumbnails/01_move_platforms.png" id="4_imvie"]
 [ext_resource type="PackedScene" uid="uid://bso4ikd5vncnb" path="res://tutorials/02_coyote_time/coyote_tutorial.tscn" id="5_ng0o5"]
 [ext_resource type="PackedScene" uid="uid://u6uy3qp0n8kx" path="res://tutorials/03_signals/signals_tutorial.tscn" id="6_8r73w"]
+[ext_resource type="Texture2D" uid="uid://bdhpcdbukvxpf" path="res://assets/thumbnails/02_coyote_time.png" id="6_50h1w"]
+[ext_resource type="Texture2D" uid="uid://cdkhh21usjdg" path="res://assets/thumbnails/03_how_to_signal.png" id="8_euy4r"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -53,11 +55,13 @@ tutorial_image = ExtResource("4_imvie")
 layout_mode = 2
 title = "How to COYOTE TIME?"
 tutorial_scene = ExtResource("5_ng0o5")
+tutorial_image = ExtResource("6_50h1w")
 
 [node name="Tutorial03" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
 layout_mode = 2
 title = "How to SIGNALS?"
 tutorial_scene = ExtResource("6_8r73w")
+tutorial_image = ExtResource("8_euy4r")
 
 [node name="Tutorial04" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
 visible = false
