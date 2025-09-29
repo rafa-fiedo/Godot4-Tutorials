@@ -33,7 +33,7 @@ func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file(main_menu_uid)
 	
 func _on_discord_pressed() -> void:
-	OS.shell_open("https://discord.gg/U3QEdYMe")
+	OS.shell_open("https://discord.gg/NNfRjrxE5r")
 
 func _on_info_pressed() -> void:
 	$InfoMargin.visible = !$InfoMargin.visible

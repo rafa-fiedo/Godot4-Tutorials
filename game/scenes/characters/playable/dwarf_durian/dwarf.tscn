@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cruc3ue30jjag" path="res://assets/sprites/characters/dorin_thunder_beard.png" id="2_7j7lh"]
 [ext_resource type="AudioStream" uid="uid://eouoc2gmxjtt" path="res://assets/audio/sound/character/dwarf/steps_1.wav" id="3_ddeck"]
 [ext_resource type="Script" uid="uid://cre3sng2gaqgw" path="res://scenes/characters/playable/dwarf_durian/sound.gd" id="4_7j7lh"]
-[ext_resource type="PackedScene" uid="uid://c1lnrbnneqlxa" path="res://scenes/hud/hp_bar.tscn" id="5_hugp7"]
+[ext_resource type="PackedScene" uid="uid://byyfdk7n1ikmb" path="res://scenes/hud/hp_bar.tscn" id="5_hugp7"]
 
 [sub_resource type="Gradient" id="Gradient_7j7lh"]
 
@@ -33,7 +33,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("BlackBackground:modulate")
+tracks/1/path = NodePath("FadeOut/BlackBackground:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -105,7 +105,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("BlackBackground:modulate")
+tracks/1/path = NodePath("FadeOut/BlackBackground:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -167,7 +167,10 @@ collision_layer = 2
 collision_mask = 29
 script = ExtResource("1_y2f6p")
 
-[node name="BlackBackground" type="Sprite2D" parent="."]
+[node name="FadeOut" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="BlackBackground" type="Sprite2D" parent="FadeOut"]
 modulate = Color(1, 1, 1, 0)
 z_index = 100
 position = Vector2(-33, -24)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c23apbpii8nbk"]
+[gd_scene load_steps=12 format=3 uid="uid://c23apbpii8nbk"]
 
 [ext_resource type="Script" uid="uid://cxahmu2jadh5v" path="res://scenes/menus/main_menu.gd" id="1_afffk"]
 [ext_resource type="Texture2D" uid="uid://bi2fxongoh258" path="res://assets/ui/main_menu.png" id="2_6bivr"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://u6uy3qp0n8kx" path="res://tutorials/03_signals/signals_tutorial.tscn" id="6_8r73w"]
 [ext_resource type="Texture2D" uid="uid://bdhpcdbukvxpf" path="res://assets/thumbnails/02_coyote_time.png" id="6_50h1w"]
 [ext_resource type="Texture2D" uid="uid://cdkhh21usjdg" path="res://assets/thumbnails/03_how_to_signal.png" id="8_euy4r"]
+[ext_resource type="PackedScene" uid="uid://dwbldqw4ve3oq" path="res://tutorials/04_hpbar/hp_tutorial.tscn" id="9_bre17"]
+[ext_resource type="Texture2D" uid="uid://cintv8ef4vdqk" path="res://assets/thumbnails/04_how_to_hp_bar.png" id="10_88kup"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -64,8 +66,10 @@ tutorial_scene = ExtResource("6_8r73w")
 tutorial_image = ExtResource("8_euy4r")
 
 [node name="Tutorial04" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
-visible = false
 layout_mode = 2
+title = "How to HP bar?"
+tutorial_scene = ExtResource("9_bre17")
+tutorial_image = ExtResource("10_88kup")
 
 [node name="Tutorial05" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
 visible = false
