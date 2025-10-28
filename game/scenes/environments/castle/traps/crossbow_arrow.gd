@@ -21,4 +21,4 @@ func set_active(value: bool) -> void:
 
 func _on_damage_area_area_entered(area: Area2D) -> void:
 	var player = area.get_parent()
-	player.hit()
+	player.die()

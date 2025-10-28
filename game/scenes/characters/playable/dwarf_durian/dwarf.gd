@@ -4,11 +4,17 @@ const SPEED := 400.0
 const JUMP_VELOCITY := -660.0
 const ROTATION_SPEED := 0.3
 
+@export var is_show_hp := true
+
 var is_live := true
 
 var is_look_left := false
 var is_coyote_timer_on := true
 var is_input_buffer_timer_on := true
+
+func _ready():
+	if not is_show_hp:
+		$HpBar.hide()
 
 func _physics_process(delta: float) -> void:
 	if not is_live:

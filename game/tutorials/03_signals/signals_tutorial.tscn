@@ -30,6 +30,7 @@ position = Vector2(1244, 1231)
 
 [node name="Player" parent="." instance=ExtResource("5_b5hwm")]
 position = Vector2(1007, 1026)
+is_show_hp = false
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 z_index = 4096

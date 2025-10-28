@@ -7,27 +7,27 @@
 [ext_resource type="Texture2D" uid="uid://dmvo3c5eu2i60" path="res://assets/ui/checkbox_off.png" id="5_32im4"]
 [ext_resource type="PackedScene" uid="uid://duv14gd0s3fo" path="res://scenes/menus/buttons/options_menu.tscn" id="6_32im4"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ub1j8"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w5i3a"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_67qcp"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kdoxy"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nx0mj"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gtl7e"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pwmgt"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tuyf6"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cc32r"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hsyxa"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s32pr"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hsyxa"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cc32r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tuyf6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pwmgt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gtl7e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nx0mj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kdoxy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_67qcp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w5i3a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ub1j8"]
 
 [node name="CoyoteTutorial" type="Node2D"]
 
@@ -36,6 +36,7 @@
 [node name="Player" parent="." instance=ExtResource("2_q2q4j")]
 unique_name_in_owner = true
 position = Vector2(388, 350)
+is_show_hp = false
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -53,31 +54,31 @@ script = ExtResource("3_q2q4j")
 [node name="CoyoteTimerLabel" type="CheckBox" parent="UI/StatusGrid"]
 layout_mode = 2
 focus_mode = 0
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ub1j8")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_w5i3a")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_67qcp")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_kdoxy")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_nx0mj")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_gtl7e")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_pwmgt")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tuyf6")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_cc32r")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_s32pr")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hsyxa")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_s32pr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cc32r")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tuyf6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pwmgt")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_gtl7e")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_nx0mj")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_kdoxy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_67qcp")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_w5i3a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ub1j8")
 theme_override_icons/checked = ExtResource("4_7ckdf")
 theme_override_icons/unchecked = ExtResource("5_32im4")
 text = "Coyote Timer: "
@@ -92,31 +93,31 @@ text = "0"
 [node name="InputBufferLabel" type="CheckBox" parent="UI/StatusGrid"]
 layout_mode = 2
 focus_mode = 0
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ub1j8")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_w5i3a")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_67qcp")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_kdoxy")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_nx0mj")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_gtl7e")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_pwmgt")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tuyf6")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_cc32r")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_s32pr")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hsyxa")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_s32pr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cc32r")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tuyf6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pwmgt")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_gtl7e")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_nx0mj")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_kdoxy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_67qcp")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_w5i3a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ub1j8")
 theme_override_icons/checked = ExtResource("4_7ckdf")
 theme_override_icons/unchecked = ExtResource("5_32im4")
 text = "Input Timer: "
