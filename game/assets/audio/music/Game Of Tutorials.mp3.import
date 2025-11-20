@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b3x67um73awl0"
+path="res://.godot/imported/Game Of Tutorials.mp3-6c56efc58077a1672b77091c889b327a.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/Game Of Tutorials.mp3"
+dest_files=["res://.godot/imported/Game Of Tutorials.mp3-6c56efc58077a1672b77091c889b327a.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=5.1
+bpm=94.0
+beat_count=168
+bar_beats=4

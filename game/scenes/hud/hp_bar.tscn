@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bvhunam8g24yl" path="res://scenes/hud/hp_bar.gd" id="1_qflou"]
 [ext_resource type="PackedScene" uid="uid://ca5u7ipxek3np" path="res://scenes/hud/heart.tscn" id="2_ri0de"]
 
-[node name="HpBar" type="Node2D"]
+[node name="HpBar" type="CanvasLayer"]
 script = ExtResource("1_qflou")
 heart_scene = ExtResource("2_ri0de")
 
