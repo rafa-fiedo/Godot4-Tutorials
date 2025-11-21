@@ -143,7 +143,7 @@ autoplay = "Idle"
 [node name="MouseInteract" type="Node" parent="."]
 
 [node name="OptionsButton" parent="MouseInteract" instance=ExtResource("6_84d46")]
-youtube_link = "https://www.youtube.com/watch?v=PpT-T7zmgdg"
+youtube_link = "https://youtu.be/YqWEW2zIxSY"
 
 [node name="IsAddVelocity" type="CheckBox" parent="MouseInteract"]
 unique_name_in_owner = true

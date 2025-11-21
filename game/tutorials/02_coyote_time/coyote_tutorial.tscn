@@ -130,7 +130,7 @@ theme_override_font_sizes/font_size = 48
 text = "0"
 
 [node name="OptionsButton" parent="UI" instance=ExtResource("6_32im4")]
-youtube_link = "https://www.youtube.com/watch?v=PpT-T7zmgdg"
+youtube_link = "https://youtu.be/U4m_g9eMcF4"
 
 [connection signal="toggled" from="UI/StatusGrid/CoyoteTimerLabel" to="UI/StatusGrid" method="_on_coyote_timer_label_toggled"]
 [connection signal="toggled" from="UI/StatusGrid/InputBufferLabel" to="UI/StatusGrid" method="_on_input_buffer_label_toggled"]

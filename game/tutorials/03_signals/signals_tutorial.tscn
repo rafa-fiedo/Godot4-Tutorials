@@ -42,7 +42,7 @@ position = Vector2(2435, 978)
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="OptionsButton" parent="UI" instance=ExtResource("6_0xm25")]
-youtube_link = "https://www.youtube.com/watch?v=PpT-T7zmgdg"
+youtube_link = "https://youtu.be/wOSrCe2EpxQ"
 
 [connection signal="pressed" from="Button" to="CrossbowTrap" method="_on_button_pressed"]
 

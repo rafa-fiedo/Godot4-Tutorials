@@ -56,6 +56,6 @@ position = Vector2(1751, 588)
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="OptionsButton" parent="UI" instance=ExtResource("6_fy8oa")]
-youtube_link = "https://www.youtube.com/watch?v=PpT-T7zmgdg"
+youtube_link = "https://youtu.be/NdCpkUFLGSU"
 
 [editable path="CastleTilemap"]
