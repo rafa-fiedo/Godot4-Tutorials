@@ -1,11 +1,11 @@
 ### Game Of Tutorials!
 
 Visit itch.io page! https://rafafiedo.itch.io/game-of-tutorials  
-Check branches or releases to have exactly source code for this version.
-
-IF NOT IMAGE => VIDEO IS NOT PUBLISHED YET
+Check branches or releases to have exactly source code wanted version.
 
 ## List of tutorials:
+
+<p align="center">🚨<b>IF NOT IMAGE => VIDEO IS NOT PUBLISHED YET</b>🚨</p>
 
 |ID | Tutorial Name | YouTube (Click the Thumbnail)|
 |---|--------------|---------|
