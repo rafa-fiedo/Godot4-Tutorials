@@ -1,6 +1,7 @@
 ### Game Of Tutorials!
 
-Visit itch.io page! https://rafafiedo.itch.io/game-of-tutorials  
+Visit itch.io to PLAY GAME with these tutorials!  
+🎮https://rafafiedo.itch.io/game-of-tutorials 🎮  
 Check branches or releases to have exactly source code wanted version.
 
 ## List of tutorials:
