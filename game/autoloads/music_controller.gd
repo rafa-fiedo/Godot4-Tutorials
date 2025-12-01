@@ -1,7 +1,8 @@
 extends Node
 
 # @onready var main_music = preload("uid://dur37h2g41vjo")
-@onready var main_music = preload("res://assets/audio/music/Game Of Tutorials.mp3")
+@onready var main_music = preload("res://assets/audio/music/Game Of Tutorials-looped-10_808.mp3")
+
 
 var music_bus_index = AudioServer.get_bus_index("Music")
 var sound_bus_index = AudioServer.get_bus_index("Sound")
