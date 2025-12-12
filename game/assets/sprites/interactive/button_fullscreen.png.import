@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cruc3ue30jjag"
-path="res://.godot/imported/dorin_thunder_beard.png-741267b2941b296a0adb199935a44b29.ctex"
+uid="uid://bsl16r8ox3uuv"
+path="res://.godot/imported/button_fullscreen.png-ed33f5289661788a69d7beebafdad270.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/dorin_thunder_beard.png"
-dest_files=["res://.godot/imported/dorin_thunder_beard.png-741267b2941b296a0adb199935a44b29.ctex"]
+source_file="res://assets/sprites/interactive/button_fullscreen.png"
+dest_files=["res://.godot/imported/button_fullscreen.png-ed33f5289661788a69d7beebafdad270.ctex"]
 
 [params]
 

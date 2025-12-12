@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://bvm0compdtyl"]
+[gd_scene load_steps=20 format=3 uid="uid://bvm0compdtyl"]
 
 [ext_resource type="Script" uid="uid://dwt84agawxapw" path="res://scenes/characters/playable/dwarf_durian/dwarf.gd" id="1_y2f6p"]
 [ext_resource type="Texture2D" uid="uid://cruc3ue30jjag" path="res://assets/sprites/characters/dorin_thunder_beard.png" id="2_7j7lh"]
 [ext_resource type="AudioStream" uid="uid://eouoc2gmxjtt" path="res://assets/audio/sound/character/dwarf/steps_1.wav" id="3_ddeck"]
+[ext_resource type="Script" uid="uid://c565eu3qgv2t8" path="res://scenes/characters/playable/dwarf_durian/animation_player.gd" id="4_1nnqq"]
 [ext_resource type="Script" uid="uid://cre3sng2gaqgw" path="res://scenes/characters/playable/dwarf_durian/sound.gd" id="4_7j7lh"]
 [ext_resource type="PackedScene" uid="uid://byyfdk7n1ikmb" path="res://scenes/hud/hp_bar.tscn" id="5_hugp7"]
 
@@ -71,6 +72,36 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_ncr4f"]
+resource_name = "HeavyAttack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [9, 10, 11, 12]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_heavy_attack"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_t61fv"]
@@ -152,6 +183,7 @@ _data = {
 &"Die": SubResource("Animation_1nnqq"),
 &"FlyBottom": SubResource("Animation_hugp7"),
 &"FlyUp": SubResource("Animation_7j7lh"),
+&"HeavyAttack": SubResource("Animation_ncr4f"),
 &"Idle": SubResource("Animation_t61fv"),
 &"RESET": SubResource("Animation_hss88"),
 &"Running": SubResource("Animation_686vu")
@@ -180,8 +212,8 @@ texture = SubResource("GradientTexture2D_hugp7")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -64)
 texture = ExtResource("2_7j7lh")
-hframes = 3
-vframes = 3
+hframes = 4
+vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-9, -59.25)
@@ -192,6 +224,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_686vu")
 }
 autoplay = "Idle"
+script = ExtResource("4_1nnqq")
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
 bus = &"Sound"
