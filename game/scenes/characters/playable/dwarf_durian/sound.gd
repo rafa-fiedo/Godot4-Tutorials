@@ -25,9 +25,9 @@ var sounds_hit = [
 ]
 
 var sounds_heavy_attack = [
-	preload("uid://dhsp5snkgj458"),
-	preload("uid://dytkkokadtlep"),
-	preload("uid://q8ic7fmkpljc"),
+	preload("res://assets/audio/sound/character/dwarf/heavy_attack1.wav"),
+	preload("res://assets/audio/sound/character/dwarf/heavy_attack2.wav"),
+	preload("res://assets/audio/sound/character/dwarf/heavy_attack3.wav"),
 ]
 
 func play_die():

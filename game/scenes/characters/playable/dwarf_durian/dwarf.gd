@@ -5,6 +5,7 @@ const JUMP_VELOCITY := -660.0
 const ROTATION_SPEED := 0.3
 
 @export var is_show_hp := true
+@export var is_attack_on := false
 
 var is_live := true
 
@@ -52,6 +53,8 @@ func jump_logic():
 		$InputBufferTimer.stop()
 
 func attack_logic():
+	if !is_attack_on:
+		return
 	if Input.is_action_just_pressed("game_heavy_attack"):
 		$AnimationPlayer.play_animation("HeavyAttack")
 
@@ -95,6 +98,7 @@ func face_good_direction() -> void:
 		$CollisionShape2D.position.x = abs($CollisionShape2D.position.x)
 		$HitBoxArea.scale.x = new_value
 		$HitBoxArea.position.x = abs($HitBoxArea.position.x)
+		$AttackArea.position.x = -abs($AttackArea.position.x)
 	else:
 		var new_value = ($Sprite2D.scale.x + ROTATION_SPEED)
 		new_value = [new_value, 1].min()
@@ -103,6 +107,7 @@ func face_good_direction() -> void:
 		$CollisionShape2D.position.x = -abs($CollisionShape2D.position.x)
 		$HitBoxArea.scale.x = new_value
 		$HitBoxArea.position.x = -abs($HitBoxArea.position.x)
+		$AttackArea.position.x = abs($AttackArea.position.x)
 
 func _on_dead_zone_detector_area_entered(_area: Area2D) -> void:
 	$Sound.play_die()

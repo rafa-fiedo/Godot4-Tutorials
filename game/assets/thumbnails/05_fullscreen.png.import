@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dl5sognm6ufct"
-path="res://.godot/imported/button_minimalize.png-05f35a2c0b82136737dd71257872ec3a.ctex"
+uid="uid://bobqjftcgd0tx"
+path="res://.godot/imported/05_fullscreen.png-44456fc664856ac665a5874c9ffde61a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/interactive/button_minimalize.png"
-dest_files=["res://.godot/imported/button_minimalize.png-05f35a2c0b82136737dd71257872ec3a.ctex"]
+source_file="res://assets/thumbnails/05_fullscreen.png"
+dest_files=["res://.godot/imported/05_fullscreen.png-44456fc664856ac665a5874c9ffde61a.ctex"]
 
 [params]
 

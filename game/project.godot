@@ -8,12 +8,16 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Game Of Tutorials"
-config/version="1.4.0"
+config/version="1.5.0"
 run/main_scene="uid://c23apbpii8nbk"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/image="uid://be2uultk7lr2h"
 config/icon="res://icon.png"
 
@@ -121,6 +125,7 @@ game_heavy_attack={
 2d_physics/layer_5="neutral"
 2d_physics/layer_6="dead_zone"
 2d_physics/layer_7="pickup"
+2d_physics/layer_8="player_attack_zone"
 
 [rendering]
 
