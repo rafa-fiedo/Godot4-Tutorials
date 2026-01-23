@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://xc4jf1h5wgg3"]
+
+[ext_resource type="Script" uid="uid://d10xlraf7n1se" path="res://scenes/test_scene/how_to_fullscreen.gd" id="1_pw2tc"]
+[ext_resource type="Texture2D" uid="uid://bsl16r8ox3uuv" path="res://assets/sprites/interactive/button_fullscreen.png" id="2_ftgoc"]
+[ext_resource type="Texture2D" uid="uid://b7nhxoy8rda7s" path="res://assets/sprites/interactive/button_window.png" id="3_20qxt"]
+
+[node name="HowToFullscreen" type="CanvasLayer"]
+script = ExtResource("1_pw2tc")
+
+[node name="FullScreen" type="TextureButton" parent="."]
+offset_left = 532.0
+offset_top = -17.0
+offset_right = 732.0
+offset_bottom = 183.0
+focus_mode = 0
+texture_normal = ExtResource("2_ftgoc")
+
+[node name="Window" type="TextureButton" parent="."]
+offset_left = 1053.0
+offset_top = -13.0
+offset_right = 1253.0
+offset_bottom = 187.0
+focus_mode = 0
+texture_normal = ExtResource("3_20qxt")
+
+[node name="ToogleFullScreen" type="TextureButton" parent="."]
+offset_left = 781.0
+offset_top = 102.0
+offset_right = 981.0
+offset_bottom = 302.0
+focus_mode = 0
+texture_normal = ExtResource("2_ftgoc")
+
+[connection signal="pressed" from="FullScreen" to="." method="_on_full_screen_pressed"]
+[connection signal="pressed" from="Window" to="." method="_on_window_pressed"]
+[connection signal="pressed" from="ToogleFullScreen" to="." method="_on_toogle_full_screen_pressed"]

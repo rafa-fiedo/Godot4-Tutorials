@@ -1,7 +1,8 @@
 extends AudioStreamPlayer2D
 
-var die_db = 0
+var die_db = -1
 var jump_db = -5
+var standard_db = -1
 
 var sounds_die = [
 	preload("uid://cflqh154enbvj"),
@@ -23,6 +24,12 @@ var sounds_hit = [
 	preload("uid://bux77ygniq274")
 ]
 
+var sounds_heavy_attack = [
+	preload("res://assets/audio/sound/character/dwarf/heavy_attack1.wav"),
+	preload("res://assets/audio/sound/character/dwarf/heavy_attack2.wav"),
+	preload("res://assets/audio/sound/character/dwarf/heavy_attack3.wav"),
+]
+
 func play_die():
 	volume_db = die_db
 	rand_sound(sounds_die)
@@ -32,12 +39,18 @@ func play_jump():
 	rand_sound(sounds_jump)
 	
 func play_food_pickup():
+	volume_db = standard_db
 	stream = sounds_food_pickup[0]
 	play()
 
 func play_hit():
+	volume_db = standard_db
 	stream = sounds_hit[0]
 	play()
+	
+func play_heavy_attack():
+	volume_db = standard_db
+	rand_sound(sounds_heavy_attack)
 	
 func rand_sound(array):
 	var index = randi_range(0, array.size()-1)

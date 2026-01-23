@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://bvm0compdtyl"]
+[gd_scene format=3 uid="uid://bvm0compdtyl"]
 
 [ext_resource type="Script" uid="uid://dwt84agawxapw" path="res://scenes/characters/playable/dwarf_durian/dwarf.gd" id="1_y2f6p"]
 [ext_resource type="Texture2D" uid="uid://cruc3ue30jjag" path="res://assets/sprites/characters/dorin_thunder_beard.png" id="2_7j7lh"]
 [ext_resource type="AudioStream" uid="uid://eouoc2gmxjtt" path="res://assets/audio/sound/character/dwarf/steps_1.wav" id="3_ddeck"]
+[ext_resource type="Script" uid="uid://c565eu3qgv2t8" path="res://scenes/characters/playable/dwarf_durian/animation_player.gd" id="4_1nnqq"]
 [ext_resource type="Script" uid="uid://cre3sng2gaqgw" path="res://scenes/characters/playable/dwarf_durian/sound.gd" id="4_7j7lh"]
 [ext_resource type="PackedScene" uid="uid://byyfdk7n1ikmb" path="res://scenes/hud/hp_bar.tscn" id="5_hugp7"]
 
@@ -73,6 +74,48 @@ tracks/0/keys = {
 "values": [6]
 }
 
+[sub_resource type="Animation" id="Animation_ncr4f"]
+resource_name = "HeavyAttack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [9, 10, 11, 12]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_heavy_attack"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AttackArea:monitorable")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.23333332, 0.46666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="Animation" id="Animation_t61fv"]
 resource_name = "Idle"
 tracks/0/type = "value"
@@ -114,6 +157,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AttackArea:monitorable")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_686vu"]
 resource_name = "Running"
@@ -152,6 +207,7 @@ _data = {
 &"Die": SubResource("Animation_1nnqq"),
 &"FlyBottom": SubResource("Animation_hugp7"),
 &"FlyUp": SubResource("Animation_7j7lh"),
+&"HeavyAttack": SubResource("Animation_ncr4f"),
 &"Idle": SubResource("Animation_t61fv"),
 &"RESET": SubResource("Animation_hss88"),
 &"Running": SubResource("Animation_686vu")
@@ -162,68 +218,82 @@ size = Vector2(52, 106)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7j7lh"]
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_1nnqq"]
+radius = 46.9
+
+[node name="Player" type="CharacterBody2D" unique_id=2028279201]
 collision_layer = 2
 collision_mask = 29
 script = ExtResource("1_y2f6p")
 
-[node name="FadeOut" type="CanvasLayer" parent="."]
+[node name="FadeOut" type="CanvasLayer" parent="." unique_id=787574150]
 layer = 10
 
-[node name="BlackBackground" type="Sprite2D" parent="FadeOut"]
+[node name="BlackBackground" type="Sprite2D" parent="FadeOut" unique_id=768456192]
 modulate = Color(1, 1, 1, 0)
 z_index = 100
 position = Vector2(-33, -24)
 scale = Vector2(229.922, 127.156)
 texture = SubResource("GradientTexture2D_hugp7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1590541336]
 position = Vector2(0, -64)
 texture = ExtResource("2_7j7lh")
-hframes = 3
-vframes = 3
+hframes = 4
+vframes = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1693699446]
 position = Vector2(-9, -59.25)
 shape = SubResource("RectangleShape2D_t61fv")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_686vu")
-}
-autoplay = "Idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=705771615]
+libraries/ = SubResource("AnimationLibrary_686vu")
+autoplay = &"Idle"
+script = ExtResource("4_1nnqq")
 
-[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+[node name="Sound" type="AudioStreamPlayer2D" parent="." unique_id=889591938]
 bus = &"Sound"
 script = ExtResource("4_7j7lh")
 
-[node name="CoyoteTimer" type="Timer" parent="."]
+[node name="CoyoteTimer" type="Timer" parent="." unique_id=1882771951]
 wait_time = 0.2
 one_shot = true
 
-[node name="InputBufferTimer" type="Timer" parent="."]
+[node name="InputBufferTimer" type="Timer" parent="." unique_id=1144737757]
 wait_time = 0.2
 one_shot = true
 
-[node name="HitBoxArea" type="Area2D" parent="."]
+[node name="HitBoxArea" type="Area2D" parent="." unique_id=1976118454]
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxArea" unique_id=1541972940]
 position = Vector2(-9, -60)
 shape = SubResource("RectangleShape2D_7j7lh")
 debug_color = Color(0.998571, 0, 0.138503, 0.42)
 
-[node name="DeadZoneArea" type="Area2D" parent="."]
+[node name="DeadZoneArea" type="Area2D" parent="." unique_id=102859692]
 position = Vector2(-8, -56)
 collision_layer = 0
 collision_mask = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZoneArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZoneArea" unique_id=1308419826]
 position = Vector2(-2, -4)
 shape = SubResource("CircleShape2D_7j7lh")
 debug_color = Color(0, 0, 0, 0.42)
 
-[node name="HpBar" parent="." instance=ExtResource("5_hugp7")]
+[node name="HpBar" parent="." unique_id=581706861 instance=ExtResource("5_hugp7")]
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=2133610330]
+position = Vector2(74, -68)
+collision_layer = 128
+collision_mask = 0
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=22456727]
+position = Vector2(2, 8)
+shape = SubResource("CircleShape2D_1nnqq")
+debug_color = Color(0.7241189, 0.47764957, 5.7756904e-07, 0.41960785)
 
 [connection signal="area_entered" from="DeadZoneArea" to="." method="_on_dead_zone_area_area_entered"]

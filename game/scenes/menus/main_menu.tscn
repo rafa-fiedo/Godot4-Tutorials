@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c23apbpii8nbk"]
+[gd_scene format=3 uid="uid://c23apbpii8nbk"]
 
 [ext_resource type="Script" uid="uid://cxahmu2jadh5v" path="res://scenes/menus/main_menu.gd" id="1_afffk"]
 [ext_resource type="Texture2D" uid="uid://bi2fxongoh258" path="res://assets/ui/main_menu.png" id="2_6bivr"]
@@ -11,8 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://cdkhh21usjdg" path="res://assets/thumbnails/03_how_to_signal.png" id="8_euy4r"]
 [ext_resource type="PackedScene" uid="uid://dwbldqw4ve3oq" path="res://tutorials/04_hpbar/hp_tutorial.tscn" id="9_bre17"]
 [ext_resource type="Texture2D" uid="uid://cintv8ef4vdqk" path="res://assets/thumbnails/04_how_to_hp_bar.png" id="10_88kup"]
+[ext_resource type="PackedScene" uid="uid://chci0amg206t2" path="res://tutorials/05_how_to_fullscreen/how_to_fullscreen_bonus.tscn" id="11_88kup"]
+[ext_resource type="Texture2D" uid="uid://bobqjftcgd0tx" path="res://assets/thumbnails/05_fullscreen.png" id="12_bh4e2"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=1048367401]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,13 +23,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_afffk")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1993161130]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_6bivr")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1592255800]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,51 +37,53 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CenterTop" type="CenterContainer" parent="VBoxContainer"]
+[node name="CenterTop" type="CenterContainer" parent="VBoxContainer" unique_id=1284902696]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.15
 
-[node name="CenterBottom" type="CenterContainer" parent="VBoxContainer"]
+[node name="CenterBottom" type="CenterContainer" parent="VBoxContainer" unique_id=1770251240]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="FirstPage" type="GridContainer" parent="VBoxContainer/CenterBottom"]
+[node name="FirstPage" type="GridContainer" parent="VBoxContainer/CenterBottom" unique_id=23693798]
 layout_mode = 2
 columns = 3
 
-[node name="Tutorial01" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
+[node name="Tutorial01" parent="VBoxContainer/CenterBottom/FirstPage" unique_id=187104234 instance=ExtResource("2_476dn")]
 layout_mode = 2
 title = "How to MOVE PLATFORMS?"
 tutorial_image = ExtResource("4_imvie")
 
-[node name="Tutorial02" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
+[node name="Tutorial02" parent="VBoxContainer/CenterBottom/FirstPage" unique_id=58865020 instance=ExtResource("2_476dn")]
 layout_mode = 2
 title = "How to COYOTE TIME?"
 tutorial_scene = ExtResource("5_ng0o5")
 tutorial_image = ExtResource("6_50h1w")
 
-[node name="Tutorial03" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
+[node name="Tutorial03" parent="VBoxContainer/CenterBottom/FirstPage" unique_id=1485588452 instance=ExtResource("2_476dn")]
 layout_mode = 2
 title = "How to SIGNALS?"
 tutorial_scene = ExtResource("6_8r73w")
 tutorial_image = ExtResource("8_euy4r")
 
-[node name="Tutorial04" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
+[node name="Tutorial04" parent="VBoxContainer/CenterBottom/FirstPage" unique_id=327359853 instance=ExtResource("2_476dn")]
 layout_mode = 2
 title = "How to HP bar?"
 tutorial_scene = ExtResource("9_bre17")
 tutorial_image = ExtResource("10_88kup")
 
-[node name="Tutorial05" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
+[node name="Tutorial05" parent="VBoxContainer/CenterBottom/FirstPage" unique_id=1559100601 instance=ExtResource("2_476dn")]
+layout_mode = 2
+title = "How to FullScreen?"
+tutorial_scene = ExtResource("11_88kup")
+tutorial_image = ExtResource("12_bh4e2")
+
+[node name="Tutorial06" parent="VBoxContainer/CenterBottom/FirstPage" unique_id=609312880 instance=ExtResource("2_476dn")]
 visible = false
 layout_mode = 2
 
-[node name="Tutorial06" parent="VBoxContainer/CenterBottom/FirstPage" instance=ExtResource("2_476dn")]
-visible = false
-layout_mode = 2
-
-[node name="Version" type="Label" parent="."]
+[node name="Version" type="Label" parent="." unique_id=426239870]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -96,5 +100,5 @@ theme_override_font_sizes/font_size = 32
 text = "v0.1"
 horizontal_alignment = 2
 
-[node name="OptionsButton" parent="." instance=ExtResource("4_6bivr")]
+[node name="OptionsButton" parent="." unique_id=804428888 instance=ExtResource("4_6bivr")]
 is_main_menu = true

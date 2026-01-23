@@ -5,6 +5,7 @@ const JUMP_VELOCITY := -660.0
 const ROTATION_SPEED := 0.3
 
 @export var is_show_hp := true
+@export var is_attack_on := false
 
 var is_live := true
 
@@ -26,6 +27,7 @@ func _physics_process(delta: float) -> void:
 func calculate_velocity(delta: float) -> void:	
 	add_gravity(delta)
 	jump_logic()
+	attack_logic()
 	move_left_right()
 	
 func add_gravity(delta: float) -> void:
@@ -50,6 +52,12 @@ func jump_logic():
 	if not is_input_buffer_timer_on:
 		$InputBufferTimer.stop()
 
+func attack_logic():
+	if !is_attack_on:
+		return
+	if Input.is_action_just_pressed("game_heavy_attack"):
+		$AnimationPlayer.play_animation("HeavyAttack")
+
 func make_jump():
 	velocity.y = JUMP_VELOCITY
 	$Sound.play_jump()
@@ -70,16 +78,16 @@ func animate():
 	face_good_direction()	
 	if not is_on_floor():
 		if velocity.y < 0:
-			$AnimationPlayer.play("FlyUp")
+			$AnimationPlayer.play_animation("FlyUp")
 		else:
-			$AnimationPlayer.play("FlyBottom")
+			$AnimationPlayer.play_animation("FlyBottom")
 		return
 	
 	if velocity.x == 0:
-		$AnimationPlayer.play("Idle")
+		$AnimationPlayer.play_animation("Idle")
 		return
 	
-	$AnimationPlayer.play("Running")
+	$AnimationPlayer.play_animation("Running")
 
 func face_good_direction() -> void:
 	if is_look_left:
@@ -90,6 +98,7 @@ func face_good_direction() -> void:
 		$CollisionShape2D.position.x = abs($CollisionShape2D.position.x)
 		$HitBoxArea.scale.x = new_value
 		$HitBoxArea.position.x = abs($HitBoxArea.position.x)
+		$AttackArea.position.x = -abs($AttackArea.position.x)
 	else:
 		var new_value = ($Sprite2D.scale.x + ROTATION_SPEED)
 		new_value = [new_value, 1].min()
@@ -98,6 +107,7 @@ func face_good_direction() -> void:
 		$CollisionShape2D.position.x = -abs($CollisionShape2D.position.x)
 		$HitBoxArea.scale.x = new_value
 		$HitBoxArea.position.x = -abs($HitBoxArea.position.x)
+		$AttackArea.position.x = abs($AttackArea.position.x)
 
 func _on_dead_zone_detector_area_entered(_area: Area2D) -> void:
 	$Sound.play_die()
@@ -119,7 +129,7 @@ func food_pickup():
 func die() -> void:
 	is_live = false
 	$Sound.play_die()
-	$AnimationPlayer.play("Die")
+	$AnimationPlayer.play_animation("Die")
 	
 	await get_tree().create_timer(1.5).timeout
 	call_deferred("reset_scene")
