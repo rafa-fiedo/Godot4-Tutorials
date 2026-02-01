@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://75h1s4xiv4ug"]
+
+[ext_resource type="Script" uid="uid://dvg2luk1u8ekq" path="res://tutorials/05_how_to_fullscreen/fullscreen_tutorial.gd" id="1_3x2yv"]
+[ext_resource type="Texture2D" uid="uid://b7nhxoy8rda7s" path="res://assets/sprites/interactive/button_window.png" id="2_3x2yv"]
+[ext_resource type="PackedScene" uid="uid://duv14gd0s3fo" path="res://scenes/menus/buttons/options_menu.tscn" id="3_3x2yv"]
+
+[node name="FullscreenTutorial" type="Node2D" unique_id=605810628]
+script = ExtResource("1_3x2yv")
+
+[node name="ToggleFullscreen" type="TextureButton" parent="." unique_id=636853887]
+offset_left = 832.0
+offset_top = 414.0
+offset_right = 1032.0
+offset_bottom = 614.0
+texture_normal = ExtResource("2_3x2yv")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=210918850]
+
+[node name="OptionsButton" parent="UI" unique_id=363732007 instance=ExtResource("3_3x2yv")]
+youtube_link = "https://youtu.be/NdCpkUFLGSU"
+
+[connection signal="pressed" from="ToggleFullscreen" to="." method="_on_toggle_fullscreen_pressed"]

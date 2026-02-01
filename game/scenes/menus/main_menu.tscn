@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cdkhh21usjdg" path="res://assets/thumbnails/03_how_to_signal.png" id="8_euy4r"]
 [ext_resource type="PackedScene" uid="uid://dwbldqw4ve3oq" path="res://tutorials/04_hpbar/hp_tutorial.tscn" id="9_bre17"]
 [ext_resource type="Texture2D" uid="uid://cintv8ef4vdqk" path="res://assets/thumbnails/04_how_to_hp_bar.png" id="10_88kup"]
-[ext_resource type="PackedScene" uid="uid://chci0amg206t2" path="res://tutorials/05_how_to_fullscreen/how_to_fullscreen_bonus.tscn" id="11_88kup"]
+[ext_resource type="PackedScene" uid="uid://75h1s4xiv4ug" path="res://tutorials/05_how_to_fullscreen/fullscreen_tutorial.tscn" id="11_bh4e2"]
 [ext_resource type="Texture2D" uid="uid://bobqjftcgd0tx" path="res://assets/thumbnails/05_fullscreen.png" id="12_bh4e2"]
 
 [node name="MainMenu" type="Control" unique_id=1048367401]
@@ -76,7 +76,7 @@ tutorial_image = ExtResource("10_88kup")
 [node name="Tutorial05" parent="VBoxContainer/CenterBottom/FirstPage" unique_id=1559100601 instance=ExtResource("2_476dn")]
 layout_mode = 2
 title = "How to FullScreen?"
-tutorial_scene = ExtResource("11_88kup")
+tutorial_scene = ExtResource("11_bh4e2")
 tutorial_image = ExtResource("12_bh4e2")
 
 [node name="Tutorial06" parent="VBoxContainer/CenterBottom/FirstPage" unique_id=609312880 instance=ExtResource("2_476dn")]
